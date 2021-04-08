@@ -1,4 +1,3 @@
-
 #include "Mundo.h"
 #include <math.h>
 #include "freeglut.h"
@@ -28,7 +27,7 @@ void Mundo::Inicializa()
 	esfera.SetPos(0, 10);
 	esfera.SetRadio(2.5);
 	esfera.SetColor(5, 200, 100);
-	
+
 }
 void Mundo::Dibuja()
 {

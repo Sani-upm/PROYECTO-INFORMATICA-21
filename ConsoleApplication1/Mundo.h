@@ -1,3 +1,4 @@
+
 #pragma once
 #include "Esfera.h"
 
@@ -6,7 +7,7 @@ class Mundo
 public:
 	Mundo();
 	~Mundo();
-	
+
 	void RotarOjo();
 	void Inicializa();
 	void Dibuja();
@@ -20,4 +21,3 @@ private:
 	Esfera esfera;
 
 };
-
