@@ -24,9 +24,13 @@ void Mundo::Inicializa()
 	y_ojo = 10;
 	z_ojo = 75;
 
-	esfera.SetPos(0, 10);
-	esfera.SetRadio(2.5);
+	//esfera.Inicializa(5, 200, 100, 2.5, 0, 10);
+	/*
 	esfera.SetColor(5, 200, 100);
+	esfera.SetRadio(2.5);
+	esfera.SetPos(0, 10);
+	
+	*/
 
 }
 void Mundo::Dibuja()
@@ -35,14 +39,10 @@ void Mundo::Dibuja()
 		0.0, 0, 0.0,				 // hacia que punto mira  (0,0,0) 
 		0.0, 1.0, 0.0);			 // definimos hacia arriba (eje Y)    
 
-	/*pelota.Dibuja();
-	caja.Dibuja();
-	jugador.Dibuja();
-	disparo.Dibuja();
-	plataforma.Dibuja();
-	bonus.Dibuja();*/
 
 	//dibujo del suelo
+	//esfera.Dibuja();
+
 	glDisable(GL_LIGHTING);
 	glBegin(GL_POLYGON);
 	glColor3ub(255, 0, 0);
@@ -53,4 +53,15 @@ void Mundo::Dibuja()
 	glVertex3f(5.0f, 0, -5.0f);
 	glEnd();
 	glEnable(GL_LIGHTING);
+}
+
+void Mundo::Tecla(unsigned char key)
+{
+
+}
+
+void Mundo::Mueve()
+{
+	//esfera.Mueve();
+
 }

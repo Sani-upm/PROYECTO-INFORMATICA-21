@@ -1,7 +1,4 @@
 ﻿  ConsoleApplication1.cpp
-  Esfera.cpp
   Mundo.cpp
-C:\Users\sanim\Source\Repos\PROYECTO-INFORMATICA-21\ConsoleApplication1\Mundo.cpp(17,15): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\sanim\Source\Repos\PROYECTO-INFORMATICA-21\ConsoleApplication1\Mundo.cpp(18,15): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
   Generando código...
   ConsoleApplication1.vcxproj -> C:\Users\sanim\Source\Repos\PROYECTO-INFORMATICA-21\ConsoleApplication1\x64\Debug\ConsoleApplication1.exe

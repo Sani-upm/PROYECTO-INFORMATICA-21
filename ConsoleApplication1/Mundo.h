@@ -11,12 +11,14 @@ public:
 	void RotarOjo();
 	void Inicializa();
 	void Dibuja();
+	void Tecla(unsigned char key);
+	void Mueve();
 
 
 private:
-	float x_ojo;
-	float y_ojo;
-	float z_ojo;
+	double x_ojo;
+	double y_ojo;
+	double z_ojo;
 
 	Esfera esfera;
 

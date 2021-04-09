@@ -5,8 +5,9 @@
 
 
 #include "freeglut.h"
-#include "Esfera.h"
 #include "Mundo.h"
+
+Mundo mundo;
 
 //los callback, funciones que seran llamadas automaticamente por la glut
 //cuando sucedan eventos
@@ -14,12 +15,7 @@
 void OnDraw(void); //esta funcion sera llamada para dibujar
 void OnTimer(int value); //esta funcion sera llamada cuando transcurra una temporizacion
 void OnKeyboardDown(unsigned char key, int x, int y); //cuando se pulse una tecla	
-float         radio_esfera = 2.0f;
-float         x_esfera = 0.0f;
-float         y_esfera = 0.0f;
-unsigned char rojo_esfera = 255;
-unsigned char verde_esfera = 0;
-unsigned char azul_esfera = 255;
+
 
 int main(int argc, char* argv[])
 {
@@ -43,6 +39,8 @@ int main(int argc, char* argv[])
 	glutTimerFunc(25, OnTimer, 0);//le decimos que dentro de 25ms llame 1 vez a la funcion OnTimer()
 	glutKeyboardFunc(OnKeyboardDown);
 
+	mundo.Inicializa();
+
 	//pasarle el control a GLUT,que llamara a los callbacks
 	glutMainLoop();
 
@@ -57,23 +55,23 @@ void OnDraw(void)
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 
-	gluLookAt(0.0, 10, 20,  // posicion del ojo
-		0.0, 0, 0.0,      // hacia que punto mira  (0,0,0) 
-		0.0, 1.0, 0.0);      // definimos hacia arriba (eje Y)    
+	
 
-	//aqui es donde hay que poner el código de dibujo
-	glColor3ub(rojo_esfera, verde_esfera, azul_esfera);
-	glTranslatef(x_esfera, y_esfera, 0);
-	glutSolidSphere(radio_esfera, 20, 20);
-	glTranslatef(-x_esfera, y_esfera, 0);
+	mundo.Dibuja();
+
+
+
 
 	//no borrar esta linea ni poner nada despues
 	glutSwapBuffers();
 }
 void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 {
+	//mundo.Tecla();
+	// 
+	// 
 	//poner aqui el código de teclado
-	if (key == '+' && radio_esfera < 3)
+	/*if (key == '+' && radio_esfera < 3)
 		radio_esfera += 0.5f;
 	if (key == '-' && radio_esfera > 1)
 		radio_esfera -= 0.5f;
@@ -102,14 +100,14 @@ void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 	if (key == 'w')			//izq, Y positivo
 		y_esfera += 0.1f;
 	if (key == 's')			//izq, Y negativo
-		y_esfera -= 0.1f;
+		y_esfera -= 0.1f;*/
 	glutPostRedisplay();
 
 }
 
 void OnTimer(int value)
 {
-
+	//mundo.Mueve();
 }
 // Ejecutar programa: Ctrl + F5 o menú Depurar > Iniciar sin depurar
 // Depurar programa: F5 o menú Depurar > Iniciar depuración
