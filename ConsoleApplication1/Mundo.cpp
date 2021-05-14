@@ -4,6 +4,10 @@
 
 Mundo::Mundo()
 {
+	x_ojo = 0;
+	y_ojo = 10;
+	z_ojo = 75;
+
 }
 
 Mundo::~Mundo()
@@ -31,6 +35,8 @@ void Mundo::Inicializa()
 	esfera.SetPos(0, 10);
 	
 	*/
+	suelo.SetColor(255, 255, 0);
+	//suelo.SetLimites();
 
 }
 void Mundo::Dibuja()
@@ -39,20 +45,12 @@ void Mundo::Dibuja()
 		0.0, 0, 0.0,				 // hacia que punto mira  (0,0,0) 
 		0.0, 1.0, 0.0);			 // definimos hacia arriba (eje Y)    
 
+	suelo.Dibuja();
+	
 
-	//dibujo del suelo
-	//esfera.Dibuja();
+	
 
-	glDisable(GL_LIGHTING);
-	glBegin(GL_POLYGON);
-	glColor3ub(255, 0, 0);
-	glVertex3f(-5.0f, 0, -5.0f);
-	glVertex3f(-5.0f, 0, 5.0f);
-	glColor3ub(255, 255, 0);
-	glVertex3f(5.0f, 0, 5.0f);
-	glVertex3f(5.0f, 0, -5.0f);
-	glEnd();
-	glEnable(GL_LIGHTING);
+
 }
 
 void Mundo::Tecla(unsigned char key)

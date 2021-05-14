@@ -141,11 +141,17 @@
   <ItemGroup>
     <ClCompile Include="ConsoleApplication1.cpp" />
     <ClCompile Include="Esfera.cpp" />
+    <ClCompile Include="Hombre.cpp" />
     <ClCompile Include="Mundo.cpp" />
+    <ClCompile Include="Pared.cpp" />
+    <ClCompile Include="Vector2D.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Esfera.h" />
+    <ClInclude Include="Hombre.h" />
     <ClInclude Include="Mundo.h" />
+    <ClInclude Include="Pared.h" />
+    <ClInclude Include="Vector2D.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,6 +1,7 @@
 
 #pragma once
 #include "Esfera.h"
+#include "Pared.h"
 
 class Mundo
 {
@@ -21,5 +22,6 @@ private:
 	double z_ojo;
 
 	Esfera esfera;
+	Pared  suelo;
 
 };
