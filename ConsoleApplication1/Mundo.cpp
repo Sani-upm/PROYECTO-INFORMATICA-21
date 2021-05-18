@@ -36,6 +36,11 @@ void Mundo::Inicializa()
 	
 	*/
 	suelo.SetColor(255, 255, 0);
+	jugador.SetAltura(5);
+	jugador.SetVelocidad(0, 0);
+	jugador.SetPosicion(0,10);
+	//jugador.SetAceleracion(0,-9.8);
+	
 	//suelo.SetLimites();
 
 }
@@ -46,7 +51,7 @@ void Mundo::Dibuja()
 		0.0, 1.0, 0.0);			 // definimos hacia arriba (eje Y)    
 
 	suelo.Dibuja();
-	
+	jugador.Dibuja();
 
 	
 
@@ -56,10 +61,40 @@ void Mundo::Dibuja()
 void Mundo::Tecla(unsigned char key)
 {
 
+
+}
+
+void Mundo::TeclaEspecial(unsigned char _key)
+{
+	switch (_key)
+	{
+	case GLUT_KEY_LEFT:
+		jugador.SetVelocidad(-9.0f,jugador.GetYVelocidad());
+		break;
+	case GLUT_KEY_RIGHT:
+		jugador.SetVelocidad(9.0f, jugador.GetYVelocidad());
+		break;
+	}
+
+}
+
+void Mundo::TeclaArriba(unsigned char _key)
+{
+	switch (_key)
+	{
+	case GLUT_KEY_LEFT:
+		jugador.SetVelocidad(0, jugador.GetYVelocidad());
+		break;
+	case GLUT_KEY_RIGHT:
+		jugador.SetVelocidad(0, jugador.GetYVelocidad());
+		break;
+	}
 }
 
 void Mundo::Mueve()
 {
 	//esfera.Mueve();
+	jugador.Mueve(0.025f);
 
 }
+

@@ -8,10 +8,12 @@ Pared::Pared()
 	verde = 255;
 	azul  = 255;
 
+	largo = 10;
+	ancho = 0.3;
 	limite1.x = -30;
-	limite1.y = -5;
+	limite1.y = 5;
 	limite2.x = 30;
-	limite2.y = 5;
+	limite2.y = -5;
 }
 
 Pared::~Pared()
@@ -44,4 +46,13 @@ void Pared::Dibuja()
 	glVertex3f(limite2.x, 0, limite1.y);  // vertice abajo derecha
 	glEnd();
 	glEnable(GL_LIGHTING);
+}
+
+double Pared::GetYsuperior()
+{
+	return limite1.y;
+}
+double Pared::GetYinferior()
+{
+	return limite2.y;
 }

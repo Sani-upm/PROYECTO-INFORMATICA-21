@@ -2,6 +2,7 @@
 #pragma once
 #include "Esfera.h"
 #include "Pared.h"
+#include "Hombre.h"
 
 class Mundo
 {
@@ -12,8 +13,13 @@ public:
 	void RotarOjo();
 	void Inicializa();
 	void Dibuja();
-	void Tecla(unsigned char key);
+	
 	void Mueve();
+
+	void Tecla(unsigned char key);
+	void TeclaEspecial(unsigned char key);
+	void TeclaArriba(unsigned char _key);
+	
 
 
 private:
@@ -23,5 +29,5 @@ private:
 
 	Esfera esfera;
 	Pared  suelo;
-
+	Hombre jugador;
 };

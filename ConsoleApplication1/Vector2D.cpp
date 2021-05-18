@@ -14,13 +14,21 @@ Vector2D::~Vector2D()
 {
 }
 
-Vector2D Vector2D::operator+(Vector2D op)
+void Vector2D::SetCoordenadas(double _x, double _y)
 {
-	Vector2D resultado;
-	resultado.x = x + op.x;
-	resultado.y = y + op.y;
-	return resultado;
+	x = _x;
+	y = _y;
 }
+
+double Vector2D::GetX()
+{
+	return x;
+}
+double Vector2D::GetY()
+{
+	return y;
+}
+
 
 Vector2D Vector2D::operator+(float real)
 {
@@ -83,8 +91,8 @@ Vector2D Vector2D::operator *(float a)
 
 float Vector2D::Angulo(Vector2D v)
 {
-	float mod1 = modulo();
-	float mod2 = sqrt(v.x * v.x + v.y * v.y);
-	float prodEscalar = x * v.x + y * v.y;
+	double mod1 = modulo();
+	double mod2 = (float)sqrt(v.x * v.x + v.y * v.y);
+	double prodEscalar = x * v.x + y * v.y;
 	return (float)acos(prodEscalar / mod1 * mod2);
 }

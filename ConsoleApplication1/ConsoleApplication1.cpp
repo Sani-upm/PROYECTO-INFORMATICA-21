@@ -15,7 +15,8 @@ Mundo mundo;
 void OnDraw(void); //esta funcion sera llamada para dibujar
 void OnTimer(int value); //esta funcion sera llamada cuando transcurra una temporizacion
 void OnKeyboardDown(unsigned char key, int x, int y); //cuando se pulse una tecla	
-
+void onSpecialKeyboardDown(int key, int x, int y);
+void OnSpecialKeyboardUp(int key, int x, int y);
 
 int main(int argc, char* argv[])
 {
@@ -38,7 +39,9 @@ int main(int argc, char* argv[])
 	glutDisplayFunc(OnDraw);
 	glutTimerFunc(25, OnTimer, 0);//le decimos que dentro de 25ms llame 1 vez a la funcion OnTimer()
 	glutKeyboardFunc(OnKeyboardDown);
-
+	glutSpecialFunc(onSpecialKeyboardDown); //gestion de los cursores
+	
+											//Inicializacion de la escena
 	mundo.Inicializa();
 
 	//pasarle el control a GLUT,que llamara a los callbacks
@@ -55,59 +58,36 @@ void OnDraw(void)
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 
-	
-
 	mundo.Dibuja();
-
-
-
 
 	//no borrar esta linea ni poner nada despues
 	glutSwapBuffers();
 }
 void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 {
-	//mundo.Tecla();
-	// 
-	// 
-	//poner aqui el código de teclado
-	/*if (key == '+' && radio_esfera < 3)
-		radio_esfera += 0.5f;
-	if (key == '-' && radio_esfera > 1)
-		radio_esfera -= 0.5f;
-	if (key == 'r')
-	{
-		rojo_esfera = 255;
-		verde_esfera = 0;
-		azul_esfera = 0;
-	}
-	if (key == 'g')
-	{
-		rojo_esfera = 0;
-		verde_esfera = 255;
-		azul_esfera = 0;
-	}
-	if (key == 'b')
-	{
-		rojo_esfera = 0;
-		verde_esfera = 0;
-		azul_esfera = 255;
-	}
-	if (key == 'a')			//izq, X negativo
-		x_esfera -= 0.1f;
-	if (key == 'd')			//drch, X positivo
-		x_esfera += 0.1f;
-	if (key == 'w')			//izq, Y positivo
-		y_esfera += 0.1f;
-	if (key == 's')			//izq, Y negativo
-		y_esfera -= 0.1f;*/
+	mundo.Tecla(key);
 	glutPostRedisplay();
 
+}
+void onSpecialKeyboardDown(int key, int x, int y)
+{
+	mundo.TeclaEspecial(key);
+	glutPostRedisplay();
+}
+void OnSpecialKeyboardUp(int key, int x, int y)
+{
+	mundo.TeclaArriba(key);
+	glutPostRedisplay();
 }
 
 void OnTimer(int value)
 {
-	//mundo.Mueve();
+	//poner aqui el código de animacion
+	mundo.Mueve();
+	
+	//no borrar estas lineas
+	glutTimerFunc(25, OnTimer, 0);
+	glutPostRedisplay();
 }
 // Ejecutar programa: Ctrl + F5 o menú Depurar > Iniciar sin depurar
 // Depurar programa: F5 o menú Depurar > Iniciar depuración
