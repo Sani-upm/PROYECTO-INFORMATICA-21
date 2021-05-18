@@ -39,7 +39,7 @@ void Mundo::Inicializa()
 	jugador.SetAltura(5);
 	jugador.SetVelocidad(0, 0);
 	jugador.SetPosicion(0,10);
-	//jugador.SetAceleracion(0,-9.8);
+	jugador.SetAceleracion(0,-100);
 	
 	//suelo.SetLimites();
 
@@ -69,13 +69,20 @@ void Mundo::TeclaEspecial(unsigned char _key)
 	switch (_key)
 	{
 	case GLUT_KEY_LEFT:
-		jugador.SetVelocidad(-9.0f,jugador.GetYVelocidad());
+		jugador.SetVelocidad(-15.0f, jugador.GetYVelocidad());
 		break;
 	case GLUT_KEY_RIGHT:
-		jugador.SetVelocidad(9.0f, jugador.GetYVelocidad());
+		jugador.SetVelocidad(15.0f, jugador.GetYVelocidad());
+		break;
+
+	case GLUT_KEY_UP:
+		//if ((jugador.GetYPosicion() == 0)) //|| jugador.GetYPosicion() == 11 || remy.GetYPosicion() == 21 || remy.GetYPosicion() == 31 || remy.GetYPosicion() == 41 || remy.GetYPosicion() == 51 || remy.GetYPosicion() == 61)
+
+			jugador.SetVelocidad(jugador.GetXVelocidad(), 68);
+		//	ETSIDI::play("sonidos/SaltoRemy.mp3");
+
 		break;
 	}
-
 }
 
 void Mundo::TeclaArriba(unsigned char _key)

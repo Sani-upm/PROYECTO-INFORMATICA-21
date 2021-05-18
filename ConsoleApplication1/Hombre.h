@@ -19,7 +19,6 @@ public:
 	void SetVelocidad(double, double);
 	void SetAceleracion(double, double);
 	
-
 	//Metodos Get
 
 	double GetAltura();
@@ -31,9 +30,6 @@ public:
 	double GetXAceleracion();
 	double GetYAceleracion();
 	
-
-
-
 private:
 	double altura;
 	unsigned char rojo;

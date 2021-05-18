@@ -40,7 +40,7 @@ int main(int argc, char* argv[])
 	glutTimerFunc(25, OnTimer, 0);//le decimos que dentro de 25ms llame 1 vez a la funcion OnTimer()
 	glutKeyboardFunc(OnKeyboardDown);
 	glutSpecialFunc(onSpecialKeyboardDown); //gestion de los cursores
-	
+	glutSpecialUpFunc(OnSpecialKeyboardUp);
 											//Inicializacion de la escena
 	mundo.Inicializa();
 

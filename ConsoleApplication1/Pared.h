@@ -7,9 +7,15 @@ public:
 	Pared();
 	~Pared();
 
+	// Metodos GLUT
+	void Dibuja();
+	
+	// Metodos Set
+
 	void SetColor(unsigned char,unsigned char, unsigned char);
 	void SetPos(float , float, float, float);
-	void Dibuja();
+	
+	//Metodos Get
 
 	double GetYsuperior();
 	double GetYinferior();
