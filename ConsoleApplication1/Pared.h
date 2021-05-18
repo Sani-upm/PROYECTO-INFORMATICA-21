@@ -14,11 +14,14 @@ public:
 
 	void SetColor(unsigned char,unsigned char, unsigned char);
 	void SetPos(float , float, float, float);
+	void SetPos2(double, double, double, double);
 	
 	//Metodos Get
 
 	double GetYsuperior();
 	double GetYinferior();
+	double GetXd();
+	double GetXi();
 
 private:
 	unsigned char rojo;

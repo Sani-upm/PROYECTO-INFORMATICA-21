@@ -1,6 +1,7 @@
 #include "Mundo.h"
 #include <math.h>
 #include "freeglut.h"
+#include"Interaccion.h"
 
 Mundo::Mundo()
 {
@@ -28,20 +29,16 @@ void Mundo::Inicializa()
 	y_ojo = 10;
 	z_ojo = 75;
 
-	//esfera.Inicializa(5, 200, 100, 2.5, 0, 10);
-	/*
-	esfera.SetColor(5, 200, 100);
-	esfera.SetRadio(2.5);
-	esfera.SetPos(0, 10);
-	
-	*/
+
 	suelo.SetColor(255, 255, 0);
+	suelo.SetPos2(-30, -10, 0.3, 60);
+
 	jugador.SetAltura(5);
 	jugador.SetVelocidad(0, 0);
 	jugador.SetPosicion(0,10);
 	jugador.SetAceleracion(0,-100);
 	
-	//suelo.SetLimites();
+	
 
 }
 void Mundo::Dibuja()
@@ -69,10 +66,10 @@ void Mundo::TeclaEspecial(unsigned char _key)
 	switch (_key)
 	{
 	case GLUT_KEY_LEFT:
-		jugador.SetVelocidad(-15.0f, jugador.GetYVelocidad());
+		jugador.SetVelocidad(-25.0f, jugador.GetYVelocidad());
 		break;
 	case GLUT_KEY_RIGHT:
-		jugador.SetVelocidad(15.0f, jugador.GetYVelocidad());
+		jugador.SetVelocidad(25.0f, jugador.GetYVelocidad());
 		break;
 
 	case GLUT_KEY_UP:
@@ -102,6 +99,7 @@ void Mundo::Mueve()
 {
 	//esfera.Mueve();
 	jugador.Mueve(0.025f);
+	Interaccion::Rebote(jugador, suelo);
 
 }
 

@@ -8,7 +8,7 @@ class Interaccion
 public:
 	Interaccion();
 	~Interaccion();
-	static void Rebote( Hombre&, Pared);
+	static void Rebote( Hombre&, Pared&);
 
 private:
 
