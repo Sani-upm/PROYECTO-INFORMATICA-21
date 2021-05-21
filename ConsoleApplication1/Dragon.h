@@ -1,27 +1,27 @@
 #pragma once
-#include"Vector2D.h"
+#include "Vector2D.h"
 #include "ETSIDI.h"
 
 using ETSIDI::SpriteSequence;
 
-class Hombre
+class Dragon
 {
+
 private:
+	SpriteSequence Fly("imagenes/enemigoafly.png",2,1,50);
+	SpriteSequence Idle ("imagenes/enemigoidle.png",2,1,50);
+	SpriteSequence Attack("imagenes/enemigoattack.png",5, 1, 50);
 
-	SpriteSequence Walk("imagenes/camina.png", 8, 1, 50);
-	SpriteSequence Idle("imagenes/parado.png", 5, 1, 50);
-	SpriteSequence Jump("imagenes/salto.png", 5, 1, 50);
-	SpriteSequence Dead("imagenes/dead.png", 3, 1, 50);
-
-	double altura;
-	int vida;
 	Vector2D posicion;
 	Vector2D velocidad;
 	Vector2D aceleracion;
 
+	double altura;
+	int atacar = 0;
+
 public:
-	Hombre();
-	~Hombre(); //pa que
+
+	Dragon();
 
 	//Metodos GLUT
 	void Dibuja();
@@ -32,8 +32,8 @@ public:
 	void SetPosicion(Vector2D _xy);
 	void SetVelocidad(double _vx, double _vy);
 	void SetAceleracion(double _xa, double _ya);
-	void SetVida(int _vida);
 	void SetAltura(double _a);
+	void SetAttack(int _ataque);
 
 	//Metodos GET
 	float GetXPosicion();
@@ -42,11 +42,8 @@ public:
 	float GetYVelocidad();
 	float GetXAceleracion();
 	float GetYAceleracion();
-	float GetAltura();
-	int GetVida();
 	Vector2D GetPosicion();
-
+	
 
 	friend class Interaccion;
 };
-

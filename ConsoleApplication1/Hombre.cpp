@@ -8,16 +8,16 @@ Hombre::Hombre()
 	SetAltura(5) : //no se que poner en altura
 
 	Walk.setCenter(0, 0); //hay que configurar todos los setCenter y setSize
-	Walk.setSize(0, 0);
+	Walk.setSize(0, altura);
 
 	Idle.setCenter(0, 0);
-	Idle.setSize(0, 0);
+	Idle.setSize(0, altura);
 
 	Jump.setCenter(0, 0);
-	Jump.setSize(0, 0);
+	Jump.setSize(0, altura);
 
 	Dead.setCenter(0, 0);
-	Dead.setSize(0, 0);
+	Dead.setSize(0, altura);
 	
 	//altura = 5; ¿ESTO NO SIRVE NO? Si ya se define arriba
 	rojo = 255;
@@ -79,7 +79,7 @@ void Hombre::Mueve(float t)
 {
 	if (vida > 0)
 	{
-		posicion = posicion + velocidad * t + aceleracion * (0, 5 * t * t);
+		posicion = posicion + velocidad * t + aceleracion * (0,5f * t * t);
 		velocidad = velocidad + aceleracion * t;
 		Walk.loop();
 		Jump.loop();
@@ -89,7 +89,7 @@ void Hombre::Mueve(float t)
 
 // Metodos Set
 
-void Hombre::SetAltura(double a)
+void Hombre::SetAltura(double _a)
 {
 	altura = _a;
 }
@@ -100,6 +100,12 @@ void Hombre::SetPosicion(double _x, double _y)
 	posicion.SetCoordenadas(_x, _y);
 
 }
+
+void Hombre::SetPosicion(Vector2D _xy)
+{
+	posicion = _xy;
+}
+
 
 void Hombre::SetVelocidad(double _vx, double _vy)
 {

@@ -1,0 +1,23 @@
+PERSONAJE PRINCIPAL:
+- Es CupHead cuyos sprites son correr, saltar, muerte y ataque.
+- El ataque consiste en disparar con sus dedos y hay tres tipos de balas: (verde, azul y roja) que habrá que coger por el camino.
+- Vidas: 5
+
+ENEMIGOS:
+-DRAGÓN: se desplaza volando y dispara una bola de fuego. Cuando se le mata desaparece, es decir, no tiene animacion de muerte.
+- PATATA: no se desplaza, siempre va a estar en el lugard donde le coloquemos. Expulsa una lombriz de tierra por la boca. No tiene animacion
+	de muerte.
+- BOSS FINAL: una planta que tendrá vida como el personaje. Tira bellotas y ataca dando golpes con la cabeza. Tiene animacion de muerte.
+
+FONDOS:
+¿Cuántos niveles ponemos? 3 y el BOSS FINAL? Todavia no he encontrado fondos que me gusten.
+
+PLATAFORMAS:
+Hay que ir poniendo plataformas para que CupHead se pueda ir subiendo y asi sortear a los enemigos o matarlos desde ahi.
+No tengo imagenes de plataformas para los niveles, solo tengo para el BOSS FINAL.
+
+MONEDAS O ALGO:
+A parte de matar a los enemigos para pasar el nivel y coger las diferentes balas, ¿ponemos monedas para que vaya cogiendo o 
+	gotas de cafe o algo por el estilo?
+
+IMPORTANTE: LEER EL ARCHIVO InstruccionesETSIDIlib.pdf para poder trabajar con la libreria ETSIDI. Se encuentra en la carpeta lib.
