@@ -8,10 +8,10 @@ class Hombre
 {
 private:
 
-	SpriteSequence Walk("imagenes/camina.png", 8, 1, 50);
-	SpriteSequence Idle("imagenes/parado.png", 5, 1, 50);
-	SpriteSequence Jump("imagenes/salto.png", 5, 1, 50);
-	SpriteSequence Dead("imagenes/dead.png", 3, 1, 50);
+	SpriteSequence Walk("Imagenes/camina.png", 8);
+	SpriteSequence Idle("Imagenes/parado.png", 5);
+	SpriteSequence Jump("Imagenes/salto.png", 5);
+	SpriteSequence Dead("Imagenes/dead.png", 3);
 
 	double altura;
 	int vida;

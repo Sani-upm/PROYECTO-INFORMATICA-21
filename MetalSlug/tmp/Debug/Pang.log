@@ -1,8 +1,39 @@
 ﻿  Hombre.cpp
-C:\Users\sanim\Downloads\tema4inicial_VS19x64\MetalSlug\src\Hombre.cpp(24,35): warning C4244: 'argumento': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-C:\Users\sanim\Downloads\tema4inicial_VS19x64\MetalSlug\src\Hombre.cpp(24,23): warning C4244: 'argumento': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\nerea\Documents\GitHub\PROYECTO-INFORMATICA-21\MetalSlug\src\Hombre.h(11,22): error C2059: error de sintaxis: 'cadena'
+C:\Users\nerea\Documents\GitHub\PROYECTO-INFORMATICA-21\MetalSlug\src\Hombre.h(12,22): error C2059: error de sintaxis: 'cadena'
+C:\Users\nerea\Documents\GitHub\PROYECTO-INFORMATICA-21\MetalSlug\src\Hombre.h(13,22): error C2059: error de sintaxis: 'cadena'
+C:\Users\nerea\Documents\GitHub\PROYECTO-INFORMATICA-21\MetalSlug\src\Hombre.h(14,22): error C2059: error de sintaxis: 'cadena'
+C:\Users\nerea\Documents\GitHub\PROYECTO-INFORMATICA-21\MetalSlug\src\Hombre.cpp(22,2): error C2065: 'rojo': identificador no declarado
+C:\Users\nerea\Documents\GitHub\PROYECTO-INFORMATICA-21\MetalSlug\src\Hombre.cpp(23,2): error C2065: 'verde': identificador no declarado
+C:\Users\nerea\Documents\GitHub\PROYECTO-INFORMATICA-21\MetalSlug\src\Hombre.cpp(24,2): error C2065: 'azul': identificador no declarado
+C:\Users\nerea\Documents\GitHub\PROYECTO-INFORMATICA-21\MetalSlug\src\Hombre.cpp(39,35): warning C4244: 'argumento': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\nerea\Documents\GitHub\PROYECTO-INFORMATICA-21\MetalSlug\src\Hombre.cpp(39,23): warning C4244: 'argumento': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\nerea\Documents\GitHub\PROYECTO-INFORMATICA-21\MetalSlug\src\Hombre.cpp(40,13): error C2065: 'rojo': identificador no declarado
+C:\Users\nerea\Documents\GitHub\PROYECTO-INFORMATICA-21\MetalSlug\src\Hombre.cpp(40,19): error C2065: 'verde': identificador no declarado
+C:\Users\nerea\Documents\GitHub\PROYECTO-INFORMATICA-21\MetalSlug\src\Hombre.cpp(40,26): error C2065: 'azul': identificador no declarado
+C:\Users\nerea\Documents\GitHub\PROYECTO-INFORMATICA-21\MetalSlug\src\Hombre.cpp(74,28): warning C4244: 'argumento': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\nerea\Documents\GitHub\PROYECTO-INFORMATICA-21\MetalSlug\src\Hombre.cpp(74,15): warning C4244: 'argumento': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\nerea\Documents\GitHub\PROYECTO-INFORMATICA-21\MetalSlug\src\Hombre.cpp(81,58): error C3688: sufijo literal no válido 'f'; no se encontró el operador literal o la plantilla de operador literal 'operator ""f'
+C:\Users\nerea\Documents\GitHub\PROYECTO-INFORMATICA-21\MetalSlug\src\Hombre.cpp(129,9): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\nerea\Documents\GitHub\PROYECTO-INFORMATICA-21\MetalSlug\src\Hombre.cpp(134,17): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\nerea\Documents\GitHub\PROYECTO-INFORMATICA-21\MetalSlug\src\Hombre.cpp(138,17): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\nerea\Documents\GitHub\PROYECTO-INFORMATICA-21\MetalSlug\src\Hombre.cpp(142,18): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\nerea\Documents\GitHub\PROYECTO-INFORMATICA-21\MetalSlug\src\Hombre.cpp(146,18): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\nerea\Documents\GitHub\PROYECTO-INFORMATICA-21\MetalSlug\src\Hombre.cpp(150,20): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\nerea\Documents\GitHub\PROYECTO-INFORMATICA-21\MetalSlug\src\Hombre.cpp(154,20): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
   Interacciones.cpp
+C:\Users\nerea\Documents\GitHub\PROYECTO-INFORMATICA-21\MetalSlug\src\Hombre.h(11,22): error C2059: error de sintaxis: 'cadena'
+C:\Users\nerea\Documents\GitHub\PROYECTO-INFORMATICA-21\MetalSlug\src\Hombre.h(12,22): error C2059: error de sintaxis: 'cadena'
+C:\Users\nerea\Documents\GitHub\PROYECTO-INFORMATICA-21\MetalSlug\src\Hombre.h(13,22): error C2059: error de sintaxis: 'cadena'
+C:\Users\nerea\Documents\GitHub\PROYECTO-INFORMATICA-21\MetalSlug\src\Hombre.h(14,22): error C2059: error de sintaxis: 'cadena'
   MetalSlug.cpp
+C:\Users\nerea\Documents\GitHub\PROYECTO-INFORMATICA-21\MetalSlug\src\Hombre.h(11,22): error C2059: error de sintaxis: 'cadena'
+C:\Users\nerea\Documents\GitHub\PROYECTO-INFORMATICA-21\MetalSlug\src\Hombre.h(12,22): error C2059: error de sintaxis: 'cadena'
+C:\Users\nerea\Documents\GitHub\PROYECTO-INFORMATICA-21\MetalSlug\src\Hombre.h(13,22): error C2059: error de sintaxis: 'cadena'
+C:\Users\nerea\Documents\GitHub\PROYECTO-INFORMATICA-21\MetalSlug\src\Hombre.h(14,22): error C2059: error de sintaxis: 'cadena'
   Mundo.cpp
+C:\Users\nerea\Documents\GitHub\PROYECTO-INFORMATICA-21\MetalSlug\src\Hombre.h(11,22): error C2059: error de sintaxis: 'cadena'
+C:\Users\nerea\Documents\GitHub\PROYECTO-INFORMATICA-21\MetalSlug\src\Hombre.h(12,22): error C2059: error de sintaxis: 'cadena'
+C:\Users\nerea\Documents\GitHub\PROYECTO-INFORMATICA-21\MetalSlug\src\Hombre.h(13,22): error C2059: error de sintaxis: 'cadena'
+C:\Users\nerea\Documents\GitHub\PROYECTO-INFORMATICA-21\MetalSlug\src\Hombre.h(14,22): error C2059: error de sintaxis: 'cadena'
   Generando código...
-  Pang.vcxproj -> C:\Users\sanim\Downloads\tema4inicial_VS19x64\MetalSlug\bin\MetalSLug.exe

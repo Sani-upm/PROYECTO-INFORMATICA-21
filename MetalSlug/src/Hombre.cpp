@@ -4,9 +4,9 @@
 Hombre::Hombre()
 {
 	SetVida(5); //que el personaje tenga 5 vidas?
-	SetAltura(5) : //no se que poner en altura
+	SetAltura(5); //no se que poner en altura
 
-		Walk.setCenter(0, 0); //hay que configurar todos los setCenter y setSize
+	Walk.setCenter(0, 0); //hay que configurar todos los setCenter y setSize
 	Walk.setSize(0, altura);
 
 	Idle.setCenter(0, 0);
@@ -78,7 +78,7 @@ void Hombre::Mueve(float t)
 {
 	if (vida > 0)
 	{
-		posicion = posicion + velocidad * t + aceleracion * (0, 5f * t * t);
+		posicion = posicion + velocidad * t + aceleracion * (0,5f * t * t);
 		velocidad = velocidad + aceleracion * t;
 		Walk.loop();
 		Jump.loop();
@@ -124,32 +124,32 @@ void Hombre::SetVida(int _vida)
 
 // Metodos Get
 
-double Hombre::GetAltura()
+float Hombre::GetAltura()
 {
 	return altura;
 }
 
-double Hombre::GetXPosicion()
+float Hombre::GetXPosicion()
 {
 	return posicion.x;
 }
-double Hombre::GetYPosicion()
+float Hombre::GetYPosicion()
 {
 	return posicion.y;
 }
-double Hombre::GetXVelocidad()
+float Hombre::GetXVelocidad()
 {
 	return velocidad.x;
 }
-double Hombre::GetYVelocidad()
+float Hombre::GetYVelocidad()
 {
 	return velocidad.y;
 }
-double Hombre::GetXAceleracion()
+float Hombre::GetXAceleracion()
 {
 	return aceleracion.x;
 }
-double Hombre::GetYAceleracion()
+float Hombre::GetYAceleracion()
 {
 	return aceleracion.y;
 }
