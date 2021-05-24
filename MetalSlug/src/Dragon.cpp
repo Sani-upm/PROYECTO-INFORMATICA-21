@@ -2,7 +2,7 @@
 #include "freeglut.h"
 
 
-Dragon::Dragon(): Fly("bin/Imagenes/enemigofly.png", 2, 1, 50), Idle("bin/Imagenes/enemigoidle.png", 2, 1, 50), Attack("bin/Imagenes/enemigoattack.png", 5, 1, 50)
+Dragon::Dragon(): Fly("Imagenes/enemigofly.png", 2, 1, 50), Idle("Imagenes/enemigoidle.png", 2, 1, 50), Attack("Imagenes/enemigoattack.png", 5, 1, 50)
 
 {
 	SetAltura(5); //modificar
