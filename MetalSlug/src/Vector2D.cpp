@@ -14,17 +14,17 @@ Vector2D::~Vector2D()
 {
 }
 
-void Vector2D::SetCoordenadas(double _x, double _y)
+void Vector2D::SetCoordenadas(float _x, float _y)
 {
 	x = _x;
 	y = _y;
 }
 
-double Vector2D::GetX()
+float Vector2D::GetX()
 {
 	return x;
 }
-double Vector2D::GetY()
+float Vector2D::GetY()
 {
 	return y;
 }

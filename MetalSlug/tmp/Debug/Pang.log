@@ -1,8 +1,11 @@
-﻿  Hombre.cpp
-C:\Users\sanim\Downloads\tema4inicial_VS19x64\MetalSlug\src\Hombre.cpp(24,35): warning C4244: 'argumento': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-C:\Users\sanim\Downloads\tema4inicial_VS19x64\MetalSlug\src\Hombre.cpp(24,23): warning C4244: 'argumento': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-  Interacciones.cpp
-  MetalSlug.cpp
-  Mundo.cpp
-  Generando código...
-  Pang.vcxproj -> C:\Users\sanim\Downloads\tema4inicial_VS19x64\MetalSlug\bin\MetalSLug.exe
+﻿  Dragon.cpp
+C:\Users\sanim\Source\Repos\PROYECTO-INFORMATICA-21\MetalSlug\src\Dragon.cpp(9,17): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\sanim\Source\Repos\PROYECTO-INFORMATICA-21\MetalSlug\src\Dragon.cpp(12,18): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\sanim\Source\Repos\PROYECTO-INFORMATICA-21\MetalSlug\src\Dragon.cpp(15,20): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\sanim\Source\Repos\PROYECTO-INFORMATICA-21\MetalSlug\src\Dragon.cpp(90,30): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\sanim\Source\Repos\PROYECTO-INFORMATICA-21\MetalSlug\src\Dragon.cpp(90,26): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\sanim\Source\Repos\PROYECTO-INFORMATICA-21\MetalSlug\src\Dragon.cpp(101,32): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\sanim\Source\Repos\PROYECTO-INFORMATICA-21\MetalSlug\src\Dragon.cpp(101,27): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\sanim\Source\Repos\PROYECTO-INFORMATICA-21\MetalSlug\src\Dragon.cpp(106,34): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\sanim\Source\Repos\PROYECTO-INFORMATICA-21\MetalSlug\src\Dragon.cpp(106,29): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+  Pang.vcxproj -> C:\Users\sanim\Source\Repos\PROYECTO-INFORMATICA-21\MetalSlug\bin\MetalSLug.exe

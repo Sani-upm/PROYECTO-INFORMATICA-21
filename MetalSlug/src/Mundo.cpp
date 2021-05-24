@@ -33,7 +33,7 @@ void Mundo::Inicializa()
 	suelo.SetColor(255, 255, 0);
 	suelo.SetPos2(-30, -10, 0.3, 60);
 
-	jugador.SetAltura(5);
+	
 	jugador.SetVelocidad(0, 0);
 	jugador.SetPosicion(0, 10);
 	jugador.SetAceleracion(0, -100);
@@ -49,6 +49,7 @@ void Mundo::Dibuja()
 
 	suelo.Dibuja();
 	jugador.Dibuja();
+	dragon.Dibuja();
 
 
 
@@ -66,10 +67,10 @@ void Mundo::TeclaEspecial(unsigned char _key)
 	switch (_key)
 	{
 	case GLUT_KEY_LEFT:
-		jugador.SetVelocidad(-25.0f, jugador.GetYVelocidad());
+		jugador.SetVelocidad(-35.0f, jugador.GetYVelocidad());
 		break;
 	case GLUT_KEY_RIGHT:
-		jugador.SetVelocidad(25.0f, jugador.GetYVelocidad());
+		jugador.SetVelocidad(35.0f, jugador.GetYVelocidad());
 		break;
 
 	case GLUT_KEY_UP:
@@ -99,6 +100,7 @@ void Mundo::Mueve()
 {
 	//esfera.Mueve();
 	jugador.Mueve(0.025f);
+	dragon.Mueve(0.025f);
 	Interaccion::Rebote(jugador, suelo);
 
 }

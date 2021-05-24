@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Dragon.cpp" />
     <ClCompile Include="src\Hombre.cpp" />
     <ClCompile Include="src\Interacciones.cpp" />
     <ClCompile Include="src\MetalSlug.cpp" />
@@ -27,6 +28,7 @@
     <ClCompile Include="src\Vector2D.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Dragon.h" />
     <ClInclude Include="src\Hombre.h" />
     <ClInclude Include="src\Interaccion.h" />
     <ClInclude Include="src\Mundo.h" />

@@ -33,7 +33,7 @@ void Pared::SetPos(float x1, float y1, float x2, float y2)
 	limite2.x = x2;
 	limite2.y = y2;
 }
-void Pared::SetPos2(double x, double y, double an, double lar)
+void Pared::SetPos2(float x, float y, float an, float lar)
 {
 	limite1.SetCoordenadas(x, y);
 	limite2.x = limite1.x + lar;
@@ -65,19 +65,19 @@ void Pared::Dibuja()
 	glEnable(GL_LIGHTING);
 }
 
-double Pared::GetYsuperior()
+float Pared::GetYsuperior()
 {
 	return limite1.y;
 }
-double Pared::GetYinferior()
+float Pared::GetYinferior()
 {
 	return limite2.y;
 }
-double Pared::GetXd()
+float Pared::GetXd()
 {
 	return limite2.x;
 }
-double Pared::GetXi()
+float Pared::GetXi()
 {
 	return limite1.x;
 }

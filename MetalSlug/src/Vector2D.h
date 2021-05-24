@@ -5,14 +5,14 @@ class Vector2D
 public:
 
 	~Vector2D();
-	double x, y;
+	float x, y;
 
 	//Metodos Set
-	void SetCoordenadas(double _x, double _y);
+	void SetCoordenadas(float _x, float _y);
 
 	//Metodos Get
-	double GetX();
-	double GetY();
+	float GetX();
+	float GetY();
 
 
 

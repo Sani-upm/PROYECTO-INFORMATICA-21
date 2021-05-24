@@ -1,9 +1,25 @@
 #include"Hombre.h"
 #include"freeglut.h"
+#include"ETSIDI.h"
 
-Hombre::Hombre()
+Hombre::Hombre() :Walk("bin/Imagenes/camina.png",8.9,1,60), Idle("bin/Imagenes/parado.png",5,1,20), Jump("bin/Imagenes/salto.png", 5,1,200), Dead("bin/Imagenes/dead.png",1,1,50)
 {
-	altura = 5;
+	SetVida(5); //que el personaje tenga 5 vidas?
+	SetAltura(15); //no se que poner en altura
+
+	Walk.setCenter(5, 0); //hay que configurar todos los setCenter y setSize
+	Walk.setSize(12, altura);
+
+	Idle.setCenter(5, 1);
+	Idle.setSize(10, altura);
+
+	Jump.setCenter(5, 1);
+	Jump.setSize(10, altura);
+
+	Dead.setCenter(5, 1);
+	Dead.setSize(10, 7);
+
+	//altura = 5; ¿ESTO NO SIRVE NO? Si ya se define arriba
 	rojo = 255;
 	verde = 0;
 	azul = 0;
@@ -12,7 +28,7 @@ Hombre::Hombre()
 	aceleracion = 0;
 }
 
-Hombre::~Hombre()
+Hombre::~Hombre() //pa que
 {
 }
 
@@ -20,23 +36,62 @@ Hombre::~Hombre()
 
 void Hombre::Dibuja()
 {
+	glPushMatrix();
+	glTranslatef(posicion.GetX(), posicion.GetY(), 0);
 	glColor3ub(rojo, verde, azul);
-	glTranslatef(posicion.x, posicion.y, 0);
-	glutSolidCube(altura);
 
+	if (velocidad.GetX() > 0.01 && vida > 0)
+	{
+		Walk.flip(false, false);
+		Jump.flip(false, false);
+	}
+	else if (velocidad.GetX() < -0.01 && vida > 0)
+	{
+		Walk.flip(true, false);
+		Jump.flip(true, false);
+
+	}
+
+	if (velocidad.GetX() < 0.01 && velocidad.GetX() > -0.01 && velocidad.GetY() == 0 && vida > 0)
+	{
+		Idle.setState(1);
+		Idle.draw();
+	}
+
+	if (velocidad.GetY() == 0 && (velocidad.GetX() > 0.1 || velocidad.GetX() < -0.1) && vida > 0)
+	{
+		Walk.draw();
+	}
+	if (velocidad.GetY() != 0 && vida > 0)
+	{
+		Jump.draw();
+
+	}
+	if (vida <= 0)
+	{
+		Dead.draw();
+	}
+
+	glTranslatef(-posicion.GetX(), -posicion.GetY(), 0);
+	glPopMatrix();
 }
 void Hombre::Mueve(float t)
 {
-	posicion = posicion + velocidad * t + aceleracion * (0, 5 * t * t);
-	velocidad = velocidad + aceleracion * t;
+	if (vida > 0)
+	{
+		posicion = posicion + velocidad * t + aceleracion * (0, 5 * t * t);
+		velocidad = velocidad + aceleracion * t;
+		Walk.loop();
+		Jump.loop();
+	}
 }
 
 
 // Metodos Set
 
-void Hombre::SetAltura(double a)
+void Hombre::SetAltura(float _a)
 {
-	altura = a;
+	altura = _a;
 }
 
 
@@ -45,6 +100,12 @@ void Hombre::SetPosicion(double _x, double _y)
 	posicion.SetCoordenadas(_x, _y);
 
 }
+
+void Hombre::SetPosicion(Vector2D _xy)
+{
+	posicion = _xy;
+}
+
 
 void Hombre::SetVelocidad(double _vx, double _vy)
 {
@@ -57,34 +118,49 @@ void Hombre::SetAceleracion(double _ax, double _ay)
 
 }
 
+void Hombre::SetVida(int _vida)
+{
+	vida = _vida;
+}
+
 // Metodos Get
 
-double Hombre::GetAltura()
+float Hombre::GetAltura()
 {
 	return altura;
 }
 
-double Hombre::GetXPosicion()
+float Hombre::GetXPosicion()
 {
 	return posicion.x;
 }
-double Hombre::GetYPosicion()
+float Hombre::GetYPosicion()
 {
 	return posicion.y;
 }
-double Hombre::GetXVelocidad()
+float Hombre::GetXVelocidad()
 {
 	return velocidad.x;
 }
-double Hombre::GetYVelocidad()
+float Hombre::GetYVelocidad()
 {
 	return velocidad.y;
 }
-double Hombre::GetXAceleracion()
+float Hombre::GetXAceleracion()
 {
 	return aceleracion.x;
 }
-double Hombre::GetYAceleracion()
+float Hombre::GetYAceleracion()
 {
 	return aceleracion.y;
+}
+
+Vector2D Hombre::GetPosicion()
+{
+	return posicion;
+}
+
+int Hombre::GetVida()
+{
+	return vida;
 }

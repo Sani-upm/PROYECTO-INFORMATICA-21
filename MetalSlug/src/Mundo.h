@@ -3,6 +3,7 @@
 //#include "Esfera.h"
 #include "Pared.h"
 #include "Hombre.h"
+#include "Dragon.h"
 
 class Mundo
 {
@@ -30,4 +31,5 @@ private:
 	//Esfera esfera;
 	Pared  suelo;
 	Hombre jugador;
+	Dragon dragon;
 };

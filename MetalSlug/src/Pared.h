@@ -15,21 +15,21 @@ public:
 
 	void SetColor(unsigned char, unsigned char, unsigned char);
 	void SetPos(float, float, float, float);
-	void SetPos2(double, double, double, double);
+	void SetPos2(float, float, float, float);
 
 	//Metodos Get
 
-	double GetYsuperior();
-	double GetYinferior();
-	double GetXd();
-	double GetXi();
+	float GetYsuperior();
+	float GetYinferior();
+	float GetXd();
+	float GetXi();
 
 private:
 	unsigned char rojo;
 	unsigned char verde;
 	unsigned char azul;
-	double ancho;
-	double largo;
+	float ancho;
+	float largo;
 	Vector2D limite1;
 	Vector2D limite2;
 
