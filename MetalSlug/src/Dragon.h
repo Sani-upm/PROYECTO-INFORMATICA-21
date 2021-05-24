@@ -8,22 +8,19 @@ class Dragon
 {
 
 private:
-
 	SpriteSequence Fly;
 	SpriteSequence Idle;
 	SpriteSequence Attack;
-
 
 	Vector2D posicion;
 	Vector2D velocidad;
 	Vector2D aceleracion;
 
-	double altura;
-	int atacar = 0;
 	unsigned char rojo;
 	unsigned char verde;
 	unsigned char azul;
-
+	double altura;
+	int atacar = 0;
 
 public:
 
@@ -49,6 +46,7 @@ public:
 	float GetXAceleracion();
 	float GetYAceleracion();
 	Vector2D GetPosicion();
+
 
 	friend class Interaccion;
 };

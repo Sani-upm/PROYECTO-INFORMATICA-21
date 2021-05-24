@@ -2,7 +2,7 @@
 #include"freeglut.h"
 #include"ETSIDI.h"
 
-Hombre::Hombre() :Walk("Imagenes/camina.png",8.9,1,60), Idle("Imagenes/parado.png",5,1,20), Jump("Imagenes/salto.png", 5,1,200), Dead("Imagenes/dead.png",1,1,50)
+Hombre::Hombre() :Walk("bin/Imagenes/camina.png",8.9,1,60), Idle("bin/Imagenes/parado.png",5,1,20), Jump("bin/Imagenes/salto.png", 5,1,200), Dead("bin/Imagenes/dead.png",1,1,50)
 {
 	SetVida(5); //que el personaje tenga 5 vidas?
 	SetAltura(15); //no se que poner en altura
@@ -19,7 +19,7 @@ Hombre::Hombre() :Walk("Imagenes/camina.png",8.9,1,60), Idle("Imagenes/parado.pn
 	Dead.setCenter(5, 1);
 	Dead.setSize(10, 7);
 
-
+	//altura = 5; ¿ESTO NO SIRVE NO? Si ya se define arriba
 	rojo = 255;
 	verde = 0;
 	azul = 0;
@@ -54,7 +54,7 @@ void Hombre::Dibuja()
 
 	if (velocidad.GetX() < 0.01 && velocidad.GetX() > -0.01 && velocidad.GetY() == 0 && vida > 0)
 	{
-		Idle.setState(0);
+		Idle.setState(1);
 		Idle.draw();
 	}
 
@@ -75,8 +75,6 @@ void Hombre::Dibuja()
 	glTranslatef(-posicion.GetX(), -posicion.GetY(), 0);
 	glPopMatrix();
 }
-
-
 void Hombre::Mueve(float t)
 {
 	if (vida > 0)
@@ -92,7 +90,6 @@ void Hombre::Mueve(float t)
 // Metodos Set
 
 void Hombre::SetAltura(float _a)
-
 {
 	altura = _a;
 }

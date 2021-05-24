@@ -8,7 +8,6 @@ class Hombre
 {
 private:
 
-
 	SpriteSequence Walk;
 	SpriteSequence Idle;
 	SpriteSequence Jump;
@@ -19,7 +18,6 @@ private:
 	unsigned char verde;
 	unsigned char azul;
 	float altura;
-
 	int vida;
 	Vector2D posicion;
 	Vector2D velocidad;
@@ -39,7 +37,6 @@ public:
 	void SetVelocidad(double _vx, double _vy);
 	void SetAceleracion(double _xa, double _ya);
 	void SetVida(int _vida);
-
 	void SetAltura(float _a);
 
 	//Metodos GET

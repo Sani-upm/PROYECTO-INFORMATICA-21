@@ -1,9 +1,7 @@
 #include "Dragon.h"
 #include "freeglut.h"
 
-
-Dragon::Dragon(): Fly("Imagenes/enemigofly.png", 2, 1, 50), Idle("Imagenes/enemigoidle.png", 2, 1, 50), Attack("Imagenes/enemigoattack.png", 5, 1, 50)
-
+Dragon::Dragon(): Fly("bin/Imagenes/enemigofly.png", 2, 1, 50), Idle("bin/Imagenes/enemigoidle.png", 2, 1, 50), Attack("bin/Imagenes/enemigoattack.png", 5, 1, 50)
 {
 	SetAltura(5); //modificar
 
@@ -63,7 +61,6 @@ void Dragon::Dibuja()
 void Dragon::Mueve(float t)
 {
 
-
 	posicion = posicion + velocidad * t + aceleracion * (0, 5 * t * t);
 	velocidad = velocidad + aceleracion * t;
 
@@ -77,7 +74,6 @@ void Dragon::Mueve(float t)
 	{
 		Attack.loop();
 	}
-
 
 }
 
@@ -113,13 +109,10 @@ void Dragon::SetAceleracion(double _ax, double _ay)
 
 void Dragon::SetAttack(int _ataque)
 {
-
 	atacar = _ataque;
-
 }
 
 // Metodos Get
-
 
 
 float Dragon::GetXPosicion()
@@ -143,7 +136,6 @@ float Dragon::GetXAceleracion()
 	return aceleracion.x;
 }
 float Dragon::GetYAceleracion()
-
 {
 	return aceleracion.y;
 }
