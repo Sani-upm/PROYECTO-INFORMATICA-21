@@ -8,28 +8,22 @@ class Dragon
 {
 
 private:
-<<<<<<< HEAD
+
 	SpriteSequence Fly;
 	SpriteSequence Idle;
 	SpriteSequence Attack;
-=======
-	SpriteSequence Fly("imagenes/enemigoafly.png",2,1,50);
-	SpriteSequence Idle ("imagenes/enemigoidle.png",2,1,50);
-	SpriteSequence Attack("imagenes/enemigoattack.png",5, 1, 50);
->>>>>>> ae6011c0afe360842ba5e5dfe26075e35195f787
+
 
 	Vector2D posicion;
 	Vector2D velocidad;
 	Vector2D aceleracion;
 
-<<<<<<< HEAD
+	double altura;
+	int atacar = 0;
 	unsigned char rojo;
 	unsigned char verde;
 	unsigned char azul;
-=======
->>>>>>> ae6011c0afe360842ba5e5dfe26075e35195f787
-	double altura;
-	int atacar = 0;
+
 
 public:
 
@@ -55,11 +49,6 @@ public:
 	float GetXAceleracion();
 	float GetYAceleracion();
 	Vector2D GetPosicion();
-<<<<<<< HEAD
-
-=======
-	
->>>>>>> ae6011c0afe360842ba5e5dfe26075e35195f787
 
 	friend class Interaccion;
 };
