@@ -5,6 +5,7 @@
 Hombre::Hombre() :Walk("bin/Imagenes/camina.png",8.9,1,60), Idle("bin/Imagenes/parado.png",5,1,20), Jump("bin/Imagenes/salto.png", 5,1,200), Dead("bin/Imagenes/dead.png",1,1,50)
 {
 	SetVida(5); //que el personaje tenga 5 vidas?
+<<<<<<< HEAD
 	SetAltura(15); //no se que poner en altura
 
 	Walk.setCenter(5, 0); //hay que configurar todos los setCenter y setSize
@@ -18,6 +19,21 @@ Hombre::Hombre() :Walk("bin/Imagenes/camina.png",8.9,1,60), Idle("bin/Imagenes/p
 
 	Dead.setCenter(5, 1);
 	Dead.setSize(10, 7);
+=======
+	SetAltura(5); //no se que poner en altura
+
+	Walk.setCenter(0, 0); //hay que configurar todos los setCenter y setSize
+	Walk.setSize(0, altura);
+
+	Idle.setCenter(0, 0);
+	Idle.setSize(0, altura);
+
+	Jump.setCenter(0, 0);
+	Jump.setSize(0, altura);
+
+	Dead.setCenter(0, 0);
+	Dead.setSize(0, altura);
+>>>>>>> ae6011c0afe360842ba5e5dfe26075e35195f787
 
 	//altura = 5; ¿ESTO NO SIRVE NO? Si ya se define arriba
 	rojo = 255;
@@ -37,21 +53,33 @@ Hombre::~Hombre() //pa que
 void Hombre::Dibuja()
 {
 	glPushMatrix();
+<<<<<<< HEAD
 	glTranslatef(posicion.GetX(), posicion.GetY(), 0);
 	glColor3ub(rojo, verde, azul);
 
 	if (velocidad.GetX() > 0.01 && vida > 0)
+=======
+	glTranslatef(posicion.x, posicion.y, 0);
+	glColor3ub(rojo, verde, azul);
+
+	if (velocidad.x > 0.01 && vida > 0)
+>>>>>>> ae6011c0afe360842ba5e5dfe26075e35195f787
 	{
 		Walk.flip(false, false);
 		Jump.flip(false, false);
 	}
+<<<<<<< HEAD
 	else if (velocidad.GetX() < -0.01 && vida > 0)
+=======
+	else if (velocidad.x < -0.01 && vida > 0)
+>>>>>>> ae6011c0afe360842ba5e5dfe26075e35195f787
 	{
 		Walk.flip(true, false);
 		Jump.flip(true, false);
 
 	}
 
+<<<<<<< HEAD
 	if (velocidad.GetX() < 0.01 && velocidad.GetX() > -0.01 && velocidad.GetY() == 0 && vida > 0)
 	{
 		Idle.setState(1);
@@ -63,6 +91,19 @@ void Hombre::Dibuja()
 		Walk.draw();
 	}
 	if (velocidad.GetY() != 0 && vida > 0)
+=======
+	if (velocidad.x < 0.01 && velocidad.x > -0.01 && velocidad.y == 0 && vida > 0)
+	{
+		Idle.setState(0);
+		Idle.draw();
+	}
+
+	if (velocidad.y == 0 && (velocidad.x > 0.1 || velocidad.x < -0.1) && vida > 0)
+	{
+		Walk.draw();
+	}
+	if (velocidad.y != 0 && vida > 0)
+>>>>>>> ae6011c0afe360842ba5e5dfe26075e35195f787
 	{
 		Jump.draw();
 
@@ -72,14 +113,22 @@ void Hombre::Dibuja()
 		Dead.draw();
 	}
 
+<<<<<<< HEAD
 	glTranslatef(-posicion.GetX(), -posicion.GetY(), 0);
+=======
+	glTranslatef(-posicion.x, -posicion.y, 0);
+>>>>>>> ae6011c0afe360842ba5e5dfe26075e35195f787
 	glPopMatrix();
 }
 void Hombre::Mueve(float t)
 {
 	if (vida > 0)
 	{
+<<<<<<< HEAD
 		posicion = posicion + velocidad * t + aceleracion * (0, 5 * t * t);
+=======
+		posicion = posicion + velocidad * t + aceleracion * (0,5f * t * t);
+>>>>>>> ae6011c0afe360842ba5e5dfe26075e35195f787
 		velocidad = velocidad + aceleracion * t;
 		Walk.loop();
 		Jump.loop();
@@ -89,7 +138,11 @@ void Hombre::Mueve(float t)
 
 // Metodos Set
 
+<<<<<<< HEAD
 void Hombre::SetAltura(float _a)
+=======
+void Hombre::SetAltura(double _a)
+>>>>>>> ae6011c0afe360842ba5e5dfe26075e35195f787
 {
 	altura = _a;
 }

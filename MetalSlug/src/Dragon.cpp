@@ -1,7 +1,11 @@
 #include "Dragon.h"
 #include "freeglut.h"
 
+<<<<<<< HEAD
 Dragon::Dragon(): Fly("bin/Imagenes/enemigofly.png", 2, 1, 50), Idle("bin/Imagenes/enemigoidle.png", 2, 1, 50), Attack("bin/Imagenes/enemigoattack.png", 5, 1, 50)
+=======
+Dragon::Dragon()
+>>>>>>> ae6011c0afe360842ba5e5dfe26075e35195f787
 {
 	SetAltura(5); //modificar
 
@@ -61,6 +65,7 @@ void Dragon::Dibuja()
 void Dragon::Mueve(float t)
 {
 
+<<<<<<< HEAD
 	posicion = posicion + velocidad * t + aceleracion * (0, 5 * t * t);
 	velocidad = velocidad + aceleracion * t;
 
@@ -75,6 +80,22 @@ void Dragon::Mueve(float t)
 		Attack.loop();
 	}
 
+=======
+		posicion = posicion + velocidad * t + aceleracion * (0,5f * t * t);
+		velocidad = velocidad + aceleracion * t;
+
+		if (atacar == 0)
+		{
+			Fly.loop();
+			Idle.loop();
+		}
+
+		if (atacar == 1)
+		{
+			Attack.loop();
+		}
+		
+>>>>>>> ae6011c0afe360842ba5e5dfe26075e35195f787
 }
 
 
@@ -109,12 +130,17 @@ void Dragon::SetAceleracion(double _ax, double _ay)
 
 void Dragon::SetAttack(int _ataque)
 {
+<<<<<<< HEAD
 	atacar = _ataque;
+=======
+	ataque = _ataque;
+>>>>>>> ae6011c0afe360842ba5e5dfe26075e35195f787
 }
 
 // Metodos Get
 
 
+<<<<<<< HEAD
 float Dragon::GetXPosicion()
 {
 	return posicion.x;
@@ -136,6 +162,29 @@ float Dragon::GetXAceleracion()
 	return aceleracion.x;
 }
 float Dragon::GetYAceleracion()
+=======
+double Dragon::GetXPosicion()
+{
+	return posicion.x;
+}
+double Dragon::GetYPosicion()
+{
+	return posicion.y;
+}
+double Dragon::GetXVelocidad()
+{
+	return velocidad.x;
+}
+double Dragon::GetYVelocidad()
+{
+	return velocidad.y;
+}
+double Dragon::GetXAceleracion()
+{
+	return aceleracion.x;
+}
+double Dragon::GetYAceleracion()
+>>>>>>> ae6011c0afe360842ba5e5dfe26075e35195f787
 {
 	return aceleracion.y;
 }
