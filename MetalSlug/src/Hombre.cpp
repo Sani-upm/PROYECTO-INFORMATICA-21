@@ -2,15 +2,15 @@
 #include"freeglut.h"
 #include"ETSIDI.h"
 
-Hombre::Hombre() :Walk("bin/Imagenes/camina.png",8.9,1,60), Idle("bin/Imagenes/parado.png",5,1,20), Jump("bin/Imagenes/salto.png", 5,1,200), Dead("bin/Imagenes/dead.png",1,1,50)
+Hombre::Hombre() :Walk("bin/Imagenes/walk.png",3,1,60), Idle("bin/Imagenes/parado.png",5,1,20), Jump("bin/Imagenes/jump2.png", 2,1,500), Dead("bin/Imagenes/dead.png",1,1,50)
 {
 	SetVida(5); //que el personaje tenga 5 vidas?
-	SetAltura(15); //no se que poner en altura
+	SetAltura(17); //no se que poner en altura
 
-	Walk.setCenter(5, 0); //hay que configurar todos los setCenter y setSize
+	Walk.setCenter(5, 3); //hay que configurar todos los setCenter y setSize
 	Walk.setSize(12, altura);
 
-	Idle.setCenter(5, 1);
+	Idle.setCenter(5, 3);
 	Idle.setSize(10, altura);
 
 	Jump.setCenter(5, 1);
