@@ -1,1 +1,8 @@
-﻿  Pang.vcxproj -> C:\Users\sanim\Source\Repos\PROYECTO-INFORMATICA-21\MetalSlug\bin\MetalSLug.exe
+﻿  Hombre.cpp
+C:\Users\sanim\Source\Repos\PROYECTO-INFORMATICA-21\MetalSlug\src\Hombre.cpp(100,30): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\sanim\Source\Repos\PROYECTO-INFORMATICA-21\MetalSlug\src\Hombre.cpp(100,26): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\sanim\Source\Repos\PROYECTO-INFORMATICA-21\MetalSlug\src\Hombre.cpp(112,32): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\sanim\Source\Repos\PROYECTO-INFORMATICA-21\MetalSlug\src\Hombre.cpp(112,27): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\sanim\Source\Repos\PROYECTO-INFORMATICA-21\MetalSlug\src\Hombre.cpp(117,34): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\sanim\Source\Repos\PROYECTO-INFORMATICA-21\MetalSlug\src\Hombre.cpp(117,29): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+  Pang.vcxproj -> C:\Users\sanim\Source\Repos\PROYECTO-INFORMATICA-21\MetalSlug\bin\MetalSLug.exe
