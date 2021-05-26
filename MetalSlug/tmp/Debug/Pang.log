@@ -1,2 +1,13 @@
-﻿  ListaPlataformas.cpp
+﻿  Interacciones.cpp
+  ListaDisparos.cpp
+  ListaPlataformas.cpp
+  MetalSlug.cpp
+  Mundo.cpp
+C:\Users\sanim\Source\Repos\PROYECTO-INFORMATICA-21\MetalSlug\src\Mundo.cpp(34,34): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\sanim\Source\Repos\PROYECTO-INFORMATICA-21\MetalSlug\src\Mundo.cpp(142,22): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  Niveles.cpp
+C:\Users\sanim\Source\Repos\PROYECTO-INFORMATICA-21\MetalSlug\src\Niveles.cpp(6,39): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  Pared.cpp
+C:\Users\sanim\Source\Repos\PROYECTO-INFORMATICA-21\MetalSlug\src\Pared.cpp(11,13): warning C4305: '=': truncamiento de 'double' a 'float'
+  Generando código...
   Pang.vcxproj -> C:\Users\sanim\Source\Repos\PROYECTO-INFORMATICA-21\MetalSlug\bin\MetalSLug.exe

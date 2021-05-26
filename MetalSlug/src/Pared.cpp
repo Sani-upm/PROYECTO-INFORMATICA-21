@@ -15,6 +15,14 @@ Pared::Pared()
 	limite2.y = -5;
 }
 
+Pared::Pared(float x, float y, float ancho, float largo)
+{
+	limite1.SetCoordenadas(x, y);
+	limite2.x = limite1.x + largo;
+	limite2.y = limite1.y - ancho;
+}
+
+
 Pared::~Pared()
 {
 }

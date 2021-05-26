@@ -7,6 +7,7 @@ class Pared
 public:
 	Pared();
 	~Pared();
+	Pared(float,float,float,float);
 
 	// Metodos GLUT
 	void Dibuja();

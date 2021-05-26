@@ -1,6 +1,6 @@
 
 #pragma once
-#define MAX_PLATAFORMAS 50
+#define MAX_PLATAFORMAS 51
 #include "Hombre.h"
 //#include "Enemigo.h"
 #include "Pared.h"

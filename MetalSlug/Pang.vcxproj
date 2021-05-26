@@ -27,6 +27,7 @@
     <ClCompile Include="src\ListaPlataformas.cpp" />
     <ClCompile Include="src\MetalSlug.cpp" />
     <ClCompile Include="src\Mundo.cpp" />
+    <ClCompile Include="src\Niveles.cpp" />
     <ClCompile Include="src\Pared.cpp" />
     <ClCompile Include="src\Vector2D.cpp" />
   </ItemGroup>
@@ -38,6 +39,7 @@
     <ClInclude Include="src\ListaDisparos.h" />
     <ClInclude Include="src\ListaPlataformas.h" />
     <ClInclude Include="src\Mundo.h" />
+    <ClInclude Include="src\Niveles.h" />
     <ClInclude Include="src\Pared.h" />
     <ClInclude Include="src\Vector2D.h" />
   </ItemGroup>
