@@ -1,29 +1,2 @@
 ﻿  Disparo.cpp
-  Dragon.cpp
-C:\Users\sanim\Source\Repos\PROYECTO-INFORMATICA-21\MetalSlug\src\Dragon.cpp(9,17): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\sanim\Source\Repos\PROYECTO-INFORMATICA-21\MetalSlug\src\Dragon.cpp(12,18): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\sanim\Source\Repos\PROYECTO-INFORMATICA-21\MetalSlug\src\Dragon.cpp(15,20): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\sanim\Source\Repos\PROYECTO-INFORMATICA-21\MetalSlug\src\Dragon.cpp(90,30): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\sanim\Source\Repos\PROYECTO-INFORMATICA-21\MetalSlug\src\Dragon.cpp(90,26): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\sanim\Source\Repos\PROYECTO-INFORMATICA-21\MetalSlug\src\Dragon.cpp(101,32): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\sanim\Source\Repos\PROYECTO-INFORMATICA-21\MetalSlug\src\Dragon.cpp(101,27): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\sanim\Source\Repos\PROYECTO-INFORMATICA-21\MetalSlug\src\Dragon.cpp(106,34): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\sanim\Source\Repos\PROYECTO-INFORMATICA-21\MetalSlug\src\Dragon.cpp(106,29): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-  Hombre.cpp
-C:\Users\sanim\Source\Repos\PROYECTO-INFORMATICA-21\MetalSlug\src\Hombre.cpp(100,30): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\sanim\Source\Repos\PROYECTO-INFORMATICA-21\MetalSlug\src\Hombre.cpp(100,26): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\sanim\Source\Repos\PROYECTO-INFORMATICA-21\MetalSlug\src\Hombre.cpp(112,32): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\sanim\Source\Repos\PROYECTO-INFORMATICA-21\MetalSlug\src\Hombre.cpp(112,27): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\sanim\Source\Repos\PROYECTO-INFORMATICA-21\MetalSlug\src\Hombre.cpp(117,34): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\sanim\Source\Repos\PROYECTO-INFORMATICA-21\MetalSlug\src\Hombre.cpp(117,29): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-  Interacciones.cpp
-  ListaDisparos.cpp
-  MetalSlug.cpp
-  Mundo.cpp
-C:\Users\sanim\Source\Repos\PROYECTO-INFORMATICA-21\MetalSlug\src\Mundo.cpp(34,33): warning C4305: 'argumento': truncamiento de 'double' a 'float'
-C:\Users\sanim\Source\Repos\PROYECTO-INFORMATICA-21\MetalSlug\src\Mundo.cpp(122,22): warning C4305: 'argumento': truncamiento de 'double' a 'float'
-  Pared.cpp
-C:\Users\sanim\Source\Repos\PROYECTO-INFORMATICA-21\MetalSlug\src\Pared.cpp(11,13): warning C4305: '=': truncamiento de 'double' a 'float'
-  Vector2D.cpp
-  Generando código...
   Pang.vcxproj -> C:\Users\sanim\Source\Repos\PROYECTO-INFORMATICA-21\MetalSlug\bin\MetalSLug.exe

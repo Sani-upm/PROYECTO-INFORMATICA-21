@@ -63,8 +63,8 @@ void Mundo::Tecla(unsigned char key)
 		case ' ':
 	{
 		Disparo* d = new Disparo();
-		d->setPos(jugador.GetPosicion().x + 3.0f, (jugador.GetPosicion().y + (jugador.GetAltura()/2)));
-		d->setVel(20.0f, 0.0f);
+		d->SetPos(jugador.GetPosicion().x + 3.0f, (jugador.GetPosicion().y + (jugador.GetAltura()/2)));
+		d->SetVel(20.0f, 0.0f);
 		
 		disparos.agregar(d);
 
@@ -88,11 +88,11 @@ void Mundo::TeclaEspecial(unsigned char _key)
 
 	case GLUT_KEY_UP:
 		//if ((jugador.GetYPosicion() == 0)) //|| jugador.GetYPosicion() == 11 || remy.GetYPosicion() == 21 || remy.GetYPosicion() == 31 || remy.GetYPosicion() == 41 || remy.GetYPosicion() == 51 || remy.GetYPosicion() == 61)
-		int s = jugador.getSalto();
+		int s = jugador.GetSalto();
 		if (s == 1)
 		{
 			jugador.SetVelocidad(jugador.GetXVelocidad(), 68);
-			jugador.setSalto(0);
+			jugador.SetSalto(0);
 		}
 		//	ETSIDI::play("sonidos/SaltoRemy.mp3");
 

@@ -37,7 +37,7 @@ void ListaDisparos::destruirContenido()
 void ListaDisparos::mueve(float t)
 {
 	for (int i = 0; i < numero; i++)
-		lista[i]->mueve(t);
+		lista[i]->Mueve(t);
 }
 
 void ListaDisparos::dibuja()

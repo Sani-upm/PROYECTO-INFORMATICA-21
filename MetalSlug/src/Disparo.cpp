@@ -2,46 +2,57 @@
 #include "Vector2D.h"
 #include "freeglut.h"
 
-Disparo::Disparo()
+Disparo::Disparo() : disparo("bin/Imagenes/Peashooter.png", 3, 1, 60)
 {
 	radio = 0.5f;
 	rojo = 0;
 	verde = 255;
 	azul = 255;
+	disparo.setCenter(5,5);
+	disparo.setSize(5,5);
 }
 
-void Disparo::setPos(float ix, float iy)
-{
-	origen.x = ix;
-	origen.y = iy;
-}
-
-void Disparo::setVel(float vx, float vy)
-{
-	velocidad.x = vx;
-	velocidad.y = vy;
-}
-
-float Disparo::getRadio()
-{
-	return radio;
-}
-
-Vector2D Disparo::getPos()
-{
-	return origen;
-}
-
-void Disparo::mueve(float t)
-{
-	origen = origen + velocidad * t;
-}
+// Metodos GLUT
 
 void Disparo::Dibuja()
 {
 	glPushMatrix();
 	glColor3f(0, 255, 255);
-	glTranslatef(origen.x, origen.y, 0);
+	glTranslatef(posicion.x, posicion.y, 0);
+	disparo.draw();
 	glutSolidSphere(radio, 20, 20);
 	glPopMatrix();
 }
+
+void Disparo::Mueve(float t)
+{
+	posicion = posicion + velocidad * t;
+	disparo.loop();
+}
+
+//Metodos Set
+
+void Disparo::SetPos(float ix, float iy)
+{
+	posicion.x = ix;
+	posicion.y = iy;
+}
+
+void Disparo::SetVel(float vx, float vy)
+{
+	velocidad.x = vx;
+	velocidad.y = vy;
+}
+
+//Metodos Get
+
+float Disparo::GetRadio()
+{
+	return radio;
+}
+
+Vector2D Disparo::GetPos()
+{
+	return posicion;
+}
+

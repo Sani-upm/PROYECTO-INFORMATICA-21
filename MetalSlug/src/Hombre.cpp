@@ -19,10 +19,10 @@ Hombre::Hombre() :Walk("bin/Imagenes/walk.png",3,1,60), Idle("bin/Imagenes/parad
 	Dead.setCenter(5, 1);
 	Dead.setSize(10, 7);
 
-	//altura = 5; ¿ESTO NO SIRVE NO? Si ya se define arriba
-	rojo = 255;
-	verde = 0;
-	azul = 0;
+
+	//rojo = 255;
+	//verde = 0;
+	//azul = 0;
 	posicion = 0;
 	velocidad = 0;
 	aceleracion = 0;
@@ -38,7 +38,7 @@ void Hombre::Dibuja()
 {
 	glPushMatrix();
 	glTranslatef(posicion.GetX(), posicion.GetY(), 0);
-	glColor3ub(rojo, verde, azul);
+	//glColor3ub(rojo, verde, azul);
 
 	if (velocidad.GetX() > 0.01 && vida > 0)
 	{
@@ -165,12 +165,12 @@ int Hombre::GetVida()
 	return vida;
 }
 
-void Hombre::setSalto(int s)
+void Hombre::SetSalto(int s)
 {
 	Salto_cargado = s;
 }
 
-int Hombre::getSalto()
+int Hombre::GetSalto()
 {
 	return Salto_cargado;
 

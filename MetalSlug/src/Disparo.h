@@ -1,23 +1,41 @@
 #pragma once
 #include "Vector2D.h"
+#include "ETSIDI.h"
+
+
+using ETSIDI::SpriteSequence;
+
 class Disparo
 {
 public:
-	friend class Interaccion;
+
 	Disparo();
+
+	//Metodos GLUT
 	virtual void Dibuja();
-	void mueve(float t);
-	void setPos(float xi, float yi);
-	void setVel(float vx, float vy);
-	float getRadio();
-	Vector2D getPos();
+	void Mueve(float t);
+
+	//Metodos Set
+
+	void SetPos(float xi, float yi);
+	void SetVel(float vx, float vy);
+
+	//Metodos Get
+
+	float GetRadio();
+	Vector2D GetPos();
 
 private:
+
+	SpriteSequence disparo;
+
 	float radio;
-	Vector2D origen;
+	Vector2D posicion;
 	Vector2D velocidad;
 	unsigned char rojo;
 	unsigned char verde;
 	unsigned char azul;
+
+	friend class Interaccion;
 };
 

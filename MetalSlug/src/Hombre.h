@@ -39,8 +39,8 @@ public:
 	void SetAceleracion(double _xa, double _ya);
 	void SetVida(int _vida);
 	void SetAltura(float _a);
-	void setSalto(int s);
-	int getSalto();
+	void SetSalto(int s);
+	
 
 	//Metodos GET
 	float GetXPosicion();
@@ -50,6 +50,7 @@ public:
 	float GetXAceleracion();
 	float GetYAceleracion();
 	float GetAltura();
+	int GetSalto();
 	int GetVida();
 	Vector2D GetPosicion();
 
