@@ -50,7 +50,7 @@ void Mundo::Dibuja()
 	suelo.Dibuja();
 	jugador.Dibuja();
 	dragon.Dibuja();
-	disparos.dibuja();
+	disparos.Dibuja();
 
 
 
@@ -59,17 +59,34 @@ void Mundo::Dibuja()
 
 void Mundo::Tecla(unsigned char key)
 {
-	switch(key)
-		case ' ':
+	switch (key)
+	{
+	case ' ':
+		
+	if(jugador.GetXVelocidad() >=0)
+		{
+		Disparo* d = new Disparo();
+		d->SetPos(jugador.GetPosicion().x + 3.0f, (jugador.GetPosicion().y + (jugador.GetAltura() / 2)));
+		d->SetVel(100.0f, 0.0f);
+
+		disparos.Agregar(d);
+
+		break;
+		}
+	
+	if (jugador.GetXVelocidad() < 0)
 	{
 		Disparo* d = new Disparo();
-		d->SetPos(jugador.GetPosicion().x + 3.0f, (jugador.GetPosicion().y + (jugador.GetAltura()/2)));
-		d->SetVel(20.0f, 0.0f);
-		
-		disparos.agregar(d);
+		d->SetPos(jugador.GetPosicion().x + 3.0f, (jugador.GetPosicion().y + (jugador.GetAltura() / 2)));
+		d->SetVel(-100.0f, 0.0f);
+
+		disparos.Agregar(d);
 
 		break;
 	}
+
+	}
+	
 
 	
 
@@ -116,10 +133,15 @@ void Mundo::TeclaArriba(unsigned char _key)
 void Mundo::Mueve()
 {
 	//esfera.Mueve();
+
+	//Movimientos de las clases
 	jugador.Mueve(0.025f);
 	dragon.Mueve(0.025f);
+	disparos.Mueve(0.025);
+
+	//Interacciones entre las clases
 	Interaccion::Rebote(jugador, suelo);
-	disparos.mueve(0.025);
+	
 
 }
 

@@ -9,9 +9,12 @@
 class Mundo
 {
 public:
+
+	//Metodos Inicializacion
 	Mundo();
 	~Mundo();
 
+	//Metodos GLUT
 	void RotarOjo();
 	void Inicializa();
 	void Dibuja();

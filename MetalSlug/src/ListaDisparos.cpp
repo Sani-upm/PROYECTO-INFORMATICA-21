@@ -1,13 +1,21 @@
 #include "ListaDisparos.h"
 
+
+//Inicializacion
 ListaDisparos::ListaDisparos()
 {
+	//inicializar la lista de disparos
 	numero = 0;
 	for (int i = 0; i < MAX_DISPAROS; i++)
 		lista[i] = 0;
 }
 
-bool ListaDisparos::agregar(Disparo *d)
+ListaDisparos::~ListaDisparos()
+{
+
+}
+
+bool ListaDisparos::Agregar(Disparo *d)
 {
 	if (numero < MAX_DISPAROS)
 	{
@@ -26,7 +34,9 @@ bool ListaDisparos::agregar(Disparo *d)
 	}
 }
 
-void ListaDisparos::destruirContenido()
+//Metodos Destructor
+
+void ListaDisparos::DestruirContenido()
 {
 	for (int i = 0; i < numero; i++)
 		delete lista[i];
@@ -34,14 +44,47 @@ void ListaDisparos::destruirContenido()
 	numero = 0;
 }
 
-void ListaDisparos::mueve(float t)
+void ListaDisparos::Eliminar(int index)
+{
+	if ((index < 0) || (index >= numero))
+	{
+		return;
+	}
+	delete lista[index];
+	numero--;
+	for (int i = index; i < numero; i++)
+	{
+		lista[i] = lista[i + 1];
+	}
+}
+void ListaDisparos::Eliminar(Disparo* q)
+{
+	for (int i = 0; i < numero; i++)
+	{
+		if (lista[i] == q)
+			Eliminar(i);
+		return;
+	}
+}
+
+
+
+//Metodos GLUT
+void ListaDisparos::Mueve(float t)
 {
 	for (int i = 0; i < numero; i++)
 		lista[i]->Mueve(t);
 }
 
-void ListaDisparos::dibuja()
+void ListaDisparos::Dibuja()
 {
 	for (int i = 0; i < numero; i++)
 		lista[i]->Dibuja();
+}
+
+//Metodos Get
+
+int ListaDisparos::GetNumero()
+{
+	return numero;
 }
