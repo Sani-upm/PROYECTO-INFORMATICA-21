@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ListaPlataformas.cpp" />
     <ClCompile Include="src\Disparo.cpp" />
     <ClCompile Include="src\Dragon.cpp" />
     <ClCompile Include="src\Hombre.cpp" />
@@ -30,6 +31,7 @@
     <ClCompile Include="src\Vector2D.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ListaPlataformas.h" />
     <ClInclude Include="src\Disparo.h" />
     <ClInclude Include="src\Dragon.h" />
     <ClInclude Include="src\Hombre.h" />

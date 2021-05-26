@@ -27,11 +27,11 @@ void Mundo::Inicializa()
 {
 	x_ojo = 0;
 	y_ojo = 10;
-	z_ojo = 75;
+	z_ojo = 100;//75;
 
 
 	suelo.SetColor(255, 255, 0);
-	suelo.SetPos2(-30, -10, 0.3, 60);
+	suelo.SetPos2(-40, -20, 0.3, 120);
 
 	
 	jugador.SetVelocidad(0, 0);
@@ -43,8 +43,10 @@ void Mundo::Inicializa()
 }
 void Mundo::Dibuja()
 {
+	x_ojo = jugador.GetXPosicion();
+
 	gluLookAt(x_ojo, y_ojo, z_ojo,		  // posicion del ojo
-		0.0, 0, 0.0,				 // hacia que punto mira  (0,0,0) 
+		x_ojo, 0, 0.0,				 // hacia que punto mira  (0,0,0) 
 		0.0, 1.0, 0.0);			 // definimos hacia arriba (eje Y)    
 
 	suelo.Dibuja();
