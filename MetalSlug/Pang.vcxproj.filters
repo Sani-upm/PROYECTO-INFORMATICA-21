@@ -42,7 +42,7 @@
     <ClCompile Include="src\ListaDisparos.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="ListaPlataformas.cpp">
+    <ClCompile Include="src\ListaPlataformas.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
@@ -71,7 +71,7 @@
     <ClInclude Include="src\ListaDisparos.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="ListaPlataformas.h">
+    <ClInclude Include="src\ListaPlataformas.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
