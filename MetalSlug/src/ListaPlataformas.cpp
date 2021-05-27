@@ -10,10 +10,9 @@ ListaPlataformas::ListaPlataformas()
 	//Inicilizar el numero de Plataforma iniciales a 0
 	numero = 0;
 	//Poner a NULL todos lo selementos de la lista 
-	for (int i = 0; i <= MAX_PLATAFORMAS; i++)
-	{
+	for (int i = 0; i < MAX_PLATAFORMAS; i++)
 		lista[i] = 0;
-	}
+	
 }
 
 ListaPlataformas::~ListaPlataformas()
@@ -80,7 +79,7 @@ void ListaPlataformas::Rebote(Hombre& r)
 */
 // Metodos destructor
 
-void ListaPlataformas::destruirContenido()
+void ListaPlataformas::DestruirContenido()
 {
 	for (int i = 0; i < numero; i++)
 	{

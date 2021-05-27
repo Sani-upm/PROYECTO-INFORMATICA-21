@@ -23,6 +23,27 @@ void Mundo::RotarOjo()
 	z_ojo = dist * sin(ang);
 }
 
+bool Mundo::CargarNivel()
+{
+	nivel++;
+	jugador.SetVida(vidas);
+	jugador.SetPosicion(0, 10);
+	jugador.SetVelocidad(0, 0);
+	jugador.SetAceleracion(0, -100);
+
+	disparos.DestruirContenido();
+	niveles.plataformas.DestruirContenido();
+
+	if (nivel == 1)
+	{
+		checkpoint = 0;
+
+		
+
+		niveles.SetLvlTutorial();
+		return true;
+	}
+}
 void Mundo::Inicializa()
 {
 	x_ojo = 0;
@@ -33,12 +54,16 @@ void Mundo::Inicializa()
 	suelo.SetColor(255, 255, 0);
 	suelo.SetPos2(-40, -20, 0.3, 120);
 
-	
-	jugador.SetVelocidad(0, 0);
 	jugador.SetPosicion(0, 10);
+	jugador.SetVelocidad(0, 0);
 	jugador.SetAceleracion(0, -100);
 
+	if (checkpoint == -1)
+		nivel = 0;
+	else
+		nivel = checkpoint - 1;
 
+	CargarNivel();
 
 }
 void Mundo::Dibuja()
@@ -54,7 +79,10 @@ void Mundo::Dibuja()
 	dragon.Dibuja();
 	disparos.Dibuja();
 
-
+	if (nivel == 1)
+	{
+		niveles.DibujarLvlTutorial();
+	}
 
 
 }
@@ -110,7 +138,7 @@ void Mundo::TeclaEspecial(unsigned char _key)
 		int s = jugador.GetSalto();
 		if (s == 1)
 		{
-			jugador.SetVelocidad(jugador.GetXVelocidad(), 68);
+			jugador.SetVelocidad(jugador.GetXVelocidad(), 80);
 			jugador.SetSalto(0);
 		}
 		//	ETSIDI::play("sonidos/SaltoRemy.mp3");
@@ -143,7 +171,9 @@ void Mundo::Mueve()
 
 	//Interacciones entre las clases
 	Interaccion::Rebote(jugador, suelo);
-	
+	Interaccion::Rebote(jugador, nivel);
+	Interaccion::Rebote(jugador, niveles);
+
 
 }
 

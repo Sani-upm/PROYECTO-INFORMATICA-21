@@ -5,6 +5,7 @@
 #include "Hombre.h"
 #include "Dragon.h"
 #include "ListaDisparos.h"
+#include "Niveles.h"
 
 class Mundo
 {
@@ -25,7 +26,15 @@ public:
 	void TeclaEspecial(unsigned char key);
 	void TeclaArriba(unsigned char _key);
 
+	// Metodos Set
+	//void SetVidas(int);
 
+	// Metodos Get
+	
+	//int GetVida();
+
+	//Metodos de los niveles
+	bool CargarNivel();
 
 private:
 	double x_ojo;
@@ -37,4 +46,9 @@ private:
 	Hombre jugador;
 	Dragon dragon;
 	ListaDisparos disparos;
+	Niveles niveles;
+
+	int nivel = 0;
+	int checkpoint = -1;
+	int vidas =2;
 };

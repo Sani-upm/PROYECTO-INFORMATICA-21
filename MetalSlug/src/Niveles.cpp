@@ -3,7 +3,9 @@
 
 void Niveles::SetLvlTutorial()
 {
-	Pared* aux = new Pared(0, 5, 0.3, 20);
+	Pared* aux = new Pared(0, 15, 0.3f, 20);
+	plataformas.Agregar(aux);
+	aux = new Pared(10, 0, 0.3, 20);
 	plataformas.Agregar(aux);
 }
 

@@ -1,6 +1,6 @@
 
 #pragma once
-#define MAX_PLATAFORMAS 51
+#define MAX_PLATAFORMAS 50
 #include "Hombre.h"
 //#include "Enemigo.h"
 #include "Pared.h"
@@ -9,6 +9,7 @@ class ListaPlataformas
 {
 private:
 	Pared* lista[MAX_PLATAFORMAS];
+	Pared pared;
 	int numero;
 
 public:
@@ -36,7 +37,7 @@ public:
 	//void Rebote(Enemigo& r);
 
 	//DESTRUCTOR
-	void destruirContenido();
+	void DestruirContenido();
 	void Eliminar(int index);
 	void Eliminar(Pared* e);
 
