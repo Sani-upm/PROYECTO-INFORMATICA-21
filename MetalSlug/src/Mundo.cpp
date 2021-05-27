@@ -51,8 +51,7 @@ void Mundo::Inicializa()
 	z_ojo = 100;//75;
 
 
-	suelo.SetColor(255, 255, 0);
-	suelo.SetPos2(-40, -20, 0.3, 120);
+	
 
 	jugador.SetPosicion(0, 10);
 	jugador.SetVelocidad(0, 0);
@@ -74,7 +73,7 @@ void Mundo::Dibuja()
 		x_ojo, 0, 0.0,				 // hacia que punto mira  (0,0,0) 
 		0.0, 1.0, 0.0);			 // definimos hacia arriba (eje Y)    
 
-	suelo.Dibuja();
+	
 	jugador.Dibuja();
 	dragon.Dibuja();
 	disparos.Dibuja();
@@ -162,7 +161,7 @@ void Mundo::TeclaArriba(unsigned char _key)
 
 void Mundo::Mueve()
 {
-	//esfera.Mueve();
+	
 
 	//Movimientos de las clases
 	jugador.Mueve(0.025f);
@@ -170,7 +169,7 @@ void Mundo::Mueve()
 	disparos.Mueve(0.025);
 
 	//Interacciones entre las clases
-	Interaccion::Rebote(jugador, suelo);
+	
 	Interaccion::Rebote(jugador, nivel);
 	Interaccion::Rebote(jugador, niveles);
 

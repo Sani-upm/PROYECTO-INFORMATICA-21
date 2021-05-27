@@ -42,7 +42,7 @@ private:
 	double z_ojo;
 
 	//Esfera esfera;
-	Pared  suelo;
+	//Pared  suelo;
 	Hombre jugador;
 	Dragon dragon;
 	ListaDisparos disparos;
