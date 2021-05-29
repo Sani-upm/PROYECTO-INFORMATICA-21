@@ -2,13 +2,13 @@
 #include "Vector2D.h"
 #include "freeglut.h"
 
-Disparo::Disparo() : disparo("bin/Imagenes/Peashooter.png", 3, 1, 60)
+Disparo::Disparo() : disparo("bin/Imagenes/disparo.png", 3, 1, 100)
 {
 	radio = 0.5f;
 	rojo = 0;
 	verde = 255;
 	azul = 255;
-	disparo.setCenter(5,5);
+	disparo.setCenter(5,7);
 	disparo.setSize(5,5);
 }
 
@@ -20,7 +20,6 @@ void Disparo::Dibuja()
 	glColor3f(0, 255, 255);
 	glTranslatef(posicion.x, posicion.y, 0);
 	disparo.draw();
-	glutSolidSphere(radio, 20, 20);
 	glPopMatrix();
 }
 
