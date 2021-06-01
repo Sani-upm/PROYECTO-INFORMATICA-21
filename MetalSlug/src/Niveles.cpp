@@ -3,12 +3,21 @@
 
 void Niveles::SetLvlTutorial()
 {
-	Pared* aux = new Pared(0, 15, 0.5f, 20);
+	Pared* aux = new Pared(-5, -12, 0.0f, 18);
 	plataformas.Agregar(aux);
-	aux = new Pared(10, 0, 0.5f, 20);
+	aux = new Pared(40, 1, 0.0f, 27);
 	plataformas.Agregar(aux);
-	aux = new Pared(-80, -20, 0.5f, 400);
+	aux = new Pared(-80, -21, 0.0f, 68);
 	plataformas.Agregar(aux);
+	aux = new Pared(23, -21, 0.0f, 63);
+	plataformas.Agregar(aux);
+	aux = new Pared(53, 14, 0.0f, 75);
+	plataformas.Agregar(aux);
+	aux = new Pared(140, 2, 0.0f, 18);
+	plataformas.Agregar(aux);
+	aux = new Pared(143, -21, 0.0f, 77);
+	plataformas.Agregar(aux);
+	
 }
 
 void Niveles::DibujarLvlTutorial()
@@ -54,20 +63,20 @@ void Niveles::DibujarLvlTutorial()
 	glEnd();
 
 	//AQUI SE PINTA EL FONDO
-	/*
+	
 	glEnable(GL_TEXTURE_2D);
-	glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/FondoSalon.png").id);
+	glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("bin/Imagenes/nivel1.png").id);
 	glDisable(GL_LIGHTING);
 	glBegin(GL_POLYGON);
 	glColor3f(1, 1, 1);
-	glTexCoord2d(0, 0); glVertex3f(-80, 87, -10);
-	glTexCoord2d(1, 0); glVertex3f(800, 87, -10);
-	glTexCoord2d(1, 1); glVertex3f(800, -10, -10);
-	glTexCoord2d(0, 1); glVertex3f(-80, -10, -10);
+	glTexCoord2d(0, 0); glVertex3f(-80, 38, -10);
+	glTexCoord2d(1, 0); glVertex3f(220, 38, -10);
+	glTexCoord2d(1, 1); glVertex3f(220, -43, -10);
+	glTexCoord2d(0, 1); glVertex3f(-80, -43, -10);
 	glEnd();
 	glEnable(GL_LIGHTING);
 	glDisable(GL_TEXTURE_2D);
-	*/
+	
 }
 
 void Niveles::Mueve(float _t)

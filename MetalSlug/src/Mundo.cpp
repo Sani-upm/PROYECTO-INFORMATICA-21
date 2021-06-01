@@ -27,7 +27,7 @@ bool Mundo::CargarNivel()
 {
 	nivel++;
 	jugador.SetVida(vidas);
-	jugador.SetPosicion(0, 10);
+	jugador.SetPosicion(-70, 10);
 	jugador.SetVelocidad(0, 0);
 	jugador.SetAceleracion(0, -100);
 
