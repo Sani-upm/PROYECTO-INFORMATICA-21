@@ -40,7 +40,23 @@ bool Mundo::CargarNivel()
 
 		
 
-		niveles.SetLvlTutorial();
+		niveles.SetLvl1();
+		return true;
+	}
+	else if (nivel == 2)
+	{
+		checkpoint = 1;
+
+
+		niveles.SetLvl2();
+		return true;
+	}
+	else if (nivel == 3)
+	{
+		checkpoint = 2;
+
+
+		niveles.SetLvl3();
 		return true;
 	}
 }
@@ -80,7 +96,18 @@ void Mundo::Dibuja()
 
 	if (nivel == 1)
 	{
-		niveles.DibujarLvlTutorial();
+		niveles.DibujarLvl1();
+	}
+	
+	if (nivel == 2)
+	{
+		niveles.DibujarLvl2();
+
+	}
+
+	if (nivel == 3) 
+	{
+		niveles.DibujarLvl3();
 	}
 
 
