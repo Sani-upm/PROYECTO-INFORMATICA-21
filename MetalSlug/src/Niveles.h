@@ -18,15 +18,15 @@ private:
 public:
 
 	ListaPlataformas plataformas;
-	void SetLvlTutorial();
-	//void SetLvl1();
-	//void SetLvl2();
-	//void SetLvl3();
+	//void SetLvlTutorial();
+	void SetLvl1();
+	void SetLvl2();
+	void SetLvl3();
 	//void SetLvl4();
-	void DibujarLvlTutorial();
-	//void PintarLvl1();
-	//void PintarLvl2();
-	//void PintarLvl3();
+	//void DibujarLvlTutorial();
+	void DibujarLvl1();
+	void DibujarLvl2();
+	void DibujarLvl3();
 	//void PintarLvl4();
 	void Mueve(float _t);
 

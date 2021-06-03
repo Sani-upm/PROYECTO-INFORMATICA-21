@@ -27,7 +27,7 @@ bool Mundo::CargarNivel()
 {
 	nivel++;
 	jugador.SetVida(vidas);
-	jugador.SetPosicion(0, 10);
+	jugador.SetPosicion(-70, 10);
 	jugador.SetVelocidad(0, 0);
 	jugador.SetAceleracion(0, -100);
 
@@ -40,7 +40,23 @@ bool Mundo::CargarNivel()
 
 		
 
-		niveles.SetLvlTutorial();
+		niveles.SetLvl1();
+		return true;
+	}
+	else if (nivel == 2)
+	{
+		checkpoint = 1;
+
+
+		niveles.SetLvl2();
+		return true;
+	}
+	else if (nivel == 3)
+	{
+		checkpoint = 2;
+
+
+		niveles.SetLvl3();
 		return true;
 	}
 }
@@ -80,7 +96,18 @@ void Mundo::Dibuja()
 
 	if (nivel == 1)
 	{
-		niveles.DibujarLvlTutorial();
+		niveles.DibujarLvl1();
+	}
+	
+	if (nivel == 2)
+	{
+		niveles.DibujarLvl2();
+
+	}
+
+	if (nivel == 3) 
+	{
+		niveles.DibujarLvl3();
 	}
 
 
