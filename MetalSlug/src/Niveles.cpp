@@ -44,17 +44,17 @@ void Niveles::SetLvl2()
 
 void Niveles::SetLvl3()
 {
-	Pared* aux = new Pared(-12.5, -16.5, 0.0f, 28.5); // 3
+	Pared* aux = new Pared(-12.5, -16.5, 0.5f, 29); // 3
 	plataformas.Agregar(aux);
-	aux = new Pared(39, 8, 0.0f, 19);// 5
+	aux = new Pared(44, 8, 0.5f, 19);// 5
 	plataformas.Agregar(aux);
-	aux = new Pared(-80, -19.5, 0.0f, 38);// 1
+	aux = new Pared(-80, -19.5, 0.5f, 38);// 1
 	plataformas.Agregar(aux);
-	aux = new Pared(-77, 21, 0.0f, 38);// 2
+	aux = new Pared(-69, 16, 0.5f, 39.5);// 2
 	plataformas.Agregar(aux);
-	aux = new Pared(59, -18.5, 0.0f, 57); //6
+	aux = new Pared(59, -18.5, 0.5f, 57); //6
 	plataformas.Agregar(aux);
-	aux = new Pared(-13, 15, 0.0f, 19);// 4
+	aux = new Pared(-2, 10, 0.5f, 19.5);// 4
 	plataformas.Agregar(aux);
 	aux = new Pared(72, -5, 0.0f, 39);// 7
 	plataformas.Agregar(aux);

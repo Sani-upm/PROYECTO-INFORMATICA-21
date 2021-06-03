@@ -14,7 +14,17 @@ Interaccion::~Interaccion()
 // Rebote con los limites del juego
 void Interaccion::Rebote(Hombre& g, int& n)
 {
+	if (g.GetYPosicion() > 30)			//colision con el techito
+	{
+	g.SetPosicion(g.GetXPosicion(), 30);
+	g.SetVelocidad(g.GetXVelocidad(), -0.01);
+	}
 
+	/*else if (g.GetYPosicion() < -40)	//Colision con el suelo
+	{
+		g.SetPosicion(g.GetXPosicion(), -70);
+		g.SetVelocidad(g.GetXVelocidad(), 0);
+	}*/
 }
 
 //Rebote contra una pared

@@ -1,4 +1,2 @@
-﻿  Mundo.cpp
-C:\Users\nerea\Documents\GitHub\PROYECTO-INFORMATICA-21\MetalSlug\src\Mundo.cpp(196,22): warning C4305: 'argumento': truncamiento de 'double' a 'float'
-C:\Users\nerea\Documents\GitHub\PROYECTO-INFORMATICA-21\MetalSlug\src\Mundo.cpp(62): warning C4715: 'Mundo::CargarNivel': no todas las rutas de acceso de control devuelven un valor
+﻿  Interacciones.cpp
   Pang.vcxproj -> C:\Users\nerea\Documents\GitHub\PROYECTO-INFORMATICA-21\MetalSlug\bin\MetalSLug.exe
