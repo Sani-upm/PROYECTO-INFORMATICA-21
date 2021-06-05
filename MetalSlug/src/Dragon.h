@@ -26,6 +26,7 @@ public:
 
 	Dragon();
 
+
 	//Metodos GLUT
 	void Dibuja();
 	void Mueve(float t);

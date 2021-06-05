@@ -1,2 +1,16 @@
-﻿  Interacciones.cpp
+﻿  Dragon.cpp
+C:\Users\nerea\Documents\GitHub\PROYECTO-INFORMATICA-21\MetalSlug\src\Dragon.cpp(9,17): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\nerea\Documents\GitHub\PROYECTO-INFORMATICA-21\MetalSlug\src\Dragon.cpp(12,18): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\nerea\Documents\GitHub\PROYECTO-INFORMATICA-21\MetalSlug\src\Dragon.cpp(15,20): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\nerea\Documents\GitHub\PROYECTO-INFORMATICA-21\MetalSlug\src\Dragon.cpp(90,30): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\nerea\Documents\GitHub\PROYECTO-INFORMATICA-21\MetalSlug\src\Dragon.cpp(90,26): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\nerea\Documents\GitHub\PROYECTO-INFORMATICA-21\MetalSlug\src\Dragon.cpp(101,32): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\nerea\Documents\GitHub\PROYECTO-INFORMATICA-21\MetalSlug\src\Dragon.cpp(101,27): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\nerea\Documents\GitHub\PROYECTO-INFORMATICA-21\MetalSlug\src\Dragon.cpp(106,34): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\nerea\Documents\GitHub\PROYECTO-INFORMATICA-21\MetalSlug\src\Dragon.cpp(106,29): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+  ListaDragon.cpp
+  MetalSlug.cpp
+  Mundo.cpp
+  Generando código...
+C:\Users\nerea\Documents\GitHub\PROYECTO-INFORMATICA-21\MetalSlug\src\Mundo.cpp(60): warning C4715: 'Mundo::CargarNivel': no todas las rutas de acceso de control devuelven un valor
   Pang.vcxproj -> C:\Users\nerea\Documents\GitHub\PROYECTO-INFORMATICA-21\MetalSlug\bin\MetalSLug.exe
