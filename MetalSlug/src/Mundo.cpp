@@ -38,8 +38,6 @@ bool Mundo::CargarNivel()
 	{
 		checkpoint = 0;
 
-		
-
 		niveles.SetLvl1();
 		return true;
 	}
@@ -93,6 +91,7 @@ void Mundo::Dibuja()
 	jugador.Dibuja();
 	dragon.Dibuja();
 	disparos.Dibuja();
+	patata.Dibuja();
 
 	if (nivel == 1)
 	{
@@ -193,7 +192,8 @@ void Mundo::Mueve()
 	//Movimientos de las clases
 	jugador.Mueve(0.025f);
 	dragon.Mueve(0.025f);
-	disparos.Mueve(0.025);
+	disparos.Mueve(0.025f);
+	patata.Mueve(0.025f);
 
 	//Interacciones entre las clases
 	

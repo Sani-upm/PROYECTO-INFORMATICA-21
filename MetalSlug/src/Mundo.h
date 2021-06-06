@@ -6,6 +6,8 @@
 #include "Dragon.h"
 #include "ListaDisparos.h"
 #include "Niveles.h"
+#include "Patata.h"
+#include "ListaDragon.h"
 
 class Mundo
 {
@@ -47,6 +49,7 @@ private:
 	Dragon dragon;
 	ListaDisparos disparos;
 	Niveles niveles;
+	Patata patata;
 
 	int nivel = 0;
 	int checkpoint = -1;

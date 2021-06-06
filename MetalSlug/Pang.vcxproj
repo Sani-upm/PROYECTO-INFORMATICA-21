@@ -24,19 +24,23 @@
     <ClCompile Include="src\Hombre.cpp" />
     <ClCompile Include="src\Interacciones.cpp" />
     <ClCompile Include="src\ListaDisparos.cpp" />
+    <ClCompile Include="src\ListaDragon.cpp" />
     <ClCompile Include="src\ListaPlataformas.cpp" />
     <ClCompile Include="src\MetalSlug.cpp" />
     <ClCompile Include="src\Mundo.cpp" />
     <ClCompile Include="src\Niveles.cpp" />
     <ClCompile Include="src\Pared.cpp" />
+    <ClCompile Include="src\Patata.cpp" />
     <ClCompile Include="src\Vector2D.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Patata.h" />
     <ClInclude Include="src\Disparo.h" />
     <ClInclude Include="src\Dragon.h" />
     <ClInclude Include="src\Hombre.h" />
     <ClInclude Include="src\Interaccion.h" />
     <ClInclude Include="src\ListaDisparos.h" />
+    <ClInclude Include="src\ListaDragon.h" />
     <ClInclude Include="src\ListaPlataformas.h" />
     <ClInclude Include="src\Mundo.h" />
     <ClInclude Include="src\Niveles.h" />
