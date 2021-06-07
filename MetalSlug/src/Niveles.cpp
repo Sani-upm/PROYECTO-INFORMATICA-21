@@ -22,23 +22,39 @@ void Niveles::SetLvl1()
 
 void Niveles::SetLvl2()
 {
-	Pared* aux = new Pared(-13, -13, 0.0f, 19); // 3
+	Pared* aux = new Pared(-13, -13, 0.5f, 19); // 3
 	plataformas.Agregar(aux);
-	aux = new Pared(92, -4, 0.0f, 28);// 5
+	aux = new Pared(92, -4, 0.5f, 28);// 5
 	plataformas.Agregar(aux);
-	aux = new Pared(-80, -4, 0.0f, 38);// 1
+	aux = new Pared(-80, -4, 0.5f, 35);// 1
 	plataformas.Agregar(aux);
-	aux = new Pared(-45, -13, 0.0f, 20);// 2
+	aux = new Pared(-48, -13, 0.5f, 20);// 2
 	plataformas.Agregar(aux);
-	aux = new Pared(132, 16, 0.0f, 21); //6
+	aux = new Pared(132, 16, 0.5f, 21); //6
 	plataformas.Agregar(aux);
-	aux = new Pared(26, 5, 0.0f, 38);// 4
+	aux = new Pared(26, 5, 0.5f, 38);// 4
 	plataformas.Agregar(aux);
-	aux = new Pared(161, -12, 0.0f, 10);// 7
+	aux = new Pared(161, -12, 0.5f, 10);// 7
 	plataformas.Agregar(aux);
-	aux = new Pared(171, -3, 0.0f, 29);// 8 
+	aux = new Pared(171, -3, 0.5f, 29);// 8 
 	plataformas.Agregar(aux);
-	aux = new Pared(199, -20, 0.0f, 21);// 9 
+	aux = new Pared(199, -20, 0.5f, 21);// 9 
+	plataformas.Agregar(aux);
+	aux = new Pared(-13, -13, 0.5f, 19); //10
+	plataformas.Agregar(aux);
+	aux = new Pared(92, -4, 0.5f, 28);// 11
+	plataformas.Agregar(aux);
+	aux = new Pared(-80, -4, 0.5f, 38);// 12
+	plataformas.Agregar(aux);
+	aux = new Pared(-45, -13, 0.5f, 20);// 13
+	plataformas.Agregar(aux);
+	aux = new Pared(132, 16, 0.5f, 21); //14
+	plataformas.Agregar(aux);
+	aux = new Pared(26, 5, 0.5f, 38);// 15
+	plataformas.Agregar(aux);
+	aux = new Pared(161, -12, 0.5f, 10);// 16
+	plataformas.Agregar(aux);
+	aux = new Pared(171, -3, 0.5f, 29);// 17
 	plataformas.Agregar(aux);
 }
 
@@ -175,8 +191,8 @@ void Niveles::DibujarLvl2()
 	glBegin(GL_POLYGON);
 	glColor3f(1, 1, 1);
 	glTexCoord2d(0, 0); glVertex3f(-80, 38, -10);
-	glTexCoord2d(1, 0); glVertex3f(220, 38, -10);
-	glTexCoord2d(1, 1); glVertex3f(220, -43, -10);
+	glTexCoord2d(1, 0); glVertex3f(550, 38, -10);
+	glTexCoord2d(1, 1); glVertex3f(550, -43, -10);
 	glTexCoord2d(0, 1); glVertex3f(-80, -43, -10);
 	glEnd();
 	glEnable(GL_LIGHTING);
