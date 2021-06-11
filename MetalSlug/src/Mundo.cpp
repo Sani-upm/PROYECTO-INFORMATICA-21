@@ -38,7 +38,7 @@ bool Mundo::CargarNivel()
 	{
 		checkpoint = 0;
 
-		niveles.SetLvl1();
+		niveles.SetLvl2();
 		return true;
 	}
 	else if (nivel == 2)
@@ -95,7 +95,7 @@ void Mundo::Dibuja()
 
 	if (nivel == 1)
 	{
-		niveles.DibujarLvl1();
+		niveles.DibujarLvl2();
 	}
 	
 	if (nivel == 2)
@@ -139,12 +139,24 @@ void Mundo::Tecla(unsigned char key)
 
 		break;
 	}
-
+	case 'D':
+	case 'd':
+		jugador.SetVelocidad(30.0f, jugador.GetYVelocidad());
+		break;
+	case 'A':
+	case 'a':
+		jugador.SetVelocidad(-30.0f, jugador.GetYVelocidad());
+		break;
+	case 'W':
+	case 'w':
+		int s = jugador.GetSalto();
+		if (s == 1)
+		{
+			jugador.SetVelocidad(jugador.GetXVelocidad(), 80);
+			jugador.SetSalto(0);
+		}
 	}
 	
-
-	
-
 }
 
 void Mundo::TeclaEspecial(unsigned char _key)
