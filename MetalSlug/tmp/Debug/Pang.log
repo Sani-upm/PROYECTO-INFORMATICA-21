@@ -1,2 +1,5 @@
-﻿  Disparo.cpp
+﻿  Niveles.cpp
+C:\Users\nerea\Documents\GitHub\PROYECTO-INFORMATICA-21\MetalSlug\src\Niveles.cpp(39,40): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\nerea\Documents\GitHub\PROYECTO-INFORMATICA-21\MetalSlug\src\Niveles.cpp(49,39): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\nerea\Documents\GitHub\PROYECTO-INFORMATICA-21\MetalSlug\src\Niveles.cpp(53,38): warning C4305: 'argumento': truncamiento de 'double' a 'float'
   Pang.vcxproj -> C:\Users\nerea\Documents\GitHub\PROYECTO-INFORMATICA-21\MetalSlug\bin\MetalSLug.exe

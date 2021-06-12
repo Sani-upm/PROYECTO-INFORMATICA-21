@@ -4,6 +4,7 @@
 #include "freeglut.h"
 #include "Mundo.h"
 
+Mundo mundo;
 Coordinador coordinador;
 
 //los callback, funciones que seran llamadas automaticamente por la glut

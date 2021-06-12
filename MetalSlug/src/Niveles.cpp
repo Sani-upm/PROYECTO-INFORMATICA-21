@@ -107,45 +107,21 @@ void Niveles::DibujarLvl1()
 	//AQUI SE PINTA LAS PLATAFORMAS
 
 	plataformas.Dibuja();
-	//quesos.Dibuja();
-	//bombas.Dibuja();
-	//vidas.Dibuja();
-	
-	//AQUI SE PINTA LA PARED DEL PRINCIPIO
+	//PARED INICIAL
+	glEnable(GL_TEXTURE_2D);
+	glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("bin/Imagenes/nivel1.png").id);
+	glDisable(GL_LIGHTING);
 	glBegin(GL_POLYGON);
-	glColor3ub(20, 60, 32);
-	glVertex3f(-150, -10, 1);
-	glColor3ub(20, 60, 32);
-	glVertex3f(-150, 90, 1);
-	glColor3ub(20, 60, 32);
-	glVertex3f(-80, 90, 1);
-	glColor3ub(20, 60, 32);
-	glVertex3f(-80, -10, 1);
+	glColor3f(1, 1, 1);
+	glTexCoord2d(0, 0); glVertex3f(-300, 38, -10);
+	glTexCoord2d(1, 0); glVertex3f(-80, 38, -10);
+	glTexCoord2d(1, 1); glVertex3f(-80, -43, -10);
+	glTexCoord2d(0, 1); glVertex3f(-300, -43, -10);
 	glEnd();
-	glBegin(GL_POLYGON);
-	glColor3ub(20, 60, 32);
-	glVertex3f(-80, -10, 1);
-	glColor3ub(20, 60, 32);
-	glVertex3f(-80, -10, -10);
-	glColor3ub(20, 60, 32);
-	glVertex3f(-80, 90, -10);
-	glColor3ub(20, 60, 32);
-	glVertex3f(-80, 90, 1);
-	glEnd();
-	//AQUI SE PINTA LA PARED FINAL
-	glBegin(GL_POLYGON);
-	glColor3ub(20, 32, 64);
-	glVertex3f(800, -10, -10);
-	glColor3ub(20, 32, 64);
-	glVertex3f(800, 90, -10);
-	glColor3ub(20, 32, 64);
-	glVertex3f(880, 90, -10);
-	glColor3ub(20, 32, 64);
-	glVertex3f(880, -10, -10);
-	glEnd();
+	glEnable(GL_LIGHTING);
+	glDisable(GL_TEXTURE_2D);
 
-	//AQUI SE PINTA EL FONDO
-	
+	//PARED PRINCIPAL
 	glEnable(GL_TEXTURE_2D);
 	glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("bin/Imagenes/nivel1.png").id);
 	glDisable(GL_LIGHTING);
@@ -159,6 +135,19 @@ void Niveles::DibujarLvl1()
 	glEnable(GL_LIGHTING);
 	glDisable(GL_TEXTURE_2D);
 	
+	//PARED FINAL
+	glEnable(GL_TEXTURE_2D);
+	glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("bin/Imagenes/nivel1.png").id);
+	glDisable(GL_LIGHTING);
+	glBegin(GL_POLYGON);
+	glColor3f(1, 1, 1);
+	glTexCoord2d(0, 0); glVertex3f(220, 38, -10);
+	glTexCoord2d(1, 0); glVertex3f(350, 38, -10);
+	glTexCoord2d(1, 1); glVertex3f(350, -43, -10);
+	glTexCoord2d(0, 1); glVertex3f(220, -43, -10);
+	glEnd();
+	glEnable(GL_LIGHTING);
+	glDisable(GL_TEXTURE_2D);
 }
 
 void Niveles::DibujarLvl2()
@@ -171,7 +160,7 @@ void Niveles::DibujarLvl2()
 	//vidas.Dibuja();
 
 	//AQUI SE PINTA LA PARED DEL PRINCIPIO
-	glBegin(GL_POLYGON);
+	/*glBegin(GL_POLYGON);
 	glColor3ub(20, 60, 32);
 	glVertex3f(-150, -10, 1);
 	glColor3ub(20, 60, 32);
@@ -201,7 +190,7 @@ void Niveles::DibujarLvl2()
 	glVertex3f(880, 90, -10);
 	glColor3ub(20, 32, 64);
 	glVertex3f(880, -10, -10);
-	glEnd();
+	glEnd();*/
 
 	//AQUI SE PINTA EL FONDO
 
@@ -229,7 +218,7 @@ void Niveles::DibujarLvl3()
 	//vidas.Dibuja();
 
 	//AQUI SE PINTA LA PARED DEL PRINCIPIO
-	glBegin(GL_POLYGON);
+	/*glBegin(GL_POLYGON);
 	glColor3ub(20, 60, 32);
 	glVertex3f(-150, -10, 1);
 	glColor3ub(20, 60, 32);
@@ -259,7 +248,7 @@ void Niveles::DibujarLvl3()
 	glVertex3f(880, 90, -10);
 	glColor3ub(20, 32, 64);
 	glVertex3f(880, -10, -10);
-	glEnd();
+	glEnd();*/
 
 	//AQUI SE PINTA EL FONDO
 
