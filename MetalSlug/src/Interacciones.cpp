@@ -30,14 +30,14 @@ void Interaccion::Rebote(Hombre& g, int& n)
 		g.SetPosicion(-75, g.GetYPosicion());
 		g.SetVelocidad(0.0, g.GetYVelocidad());
 	}
-	if (n == 1 && g.GetXPosicion() > 220)			//colision pared final primer mapa
+	if (n == 1 && g.GetXPosicion() > 227)			//colision pared final primer mapa
 	{
-		g.SetPosicion(210, g.GetYPosicion());
+		g.SetPosicion(227, g.GetYPosicion());
 		g.SetVelocidad(0.0, g.GetYVelocidad());
 	}
-	if (n != 1 && g.GetXPosicion() > 550)		//colision pared final mapas 2 y 3
+	if (n != 1 && g.GetXPosicion() > 600)		//colision pared final mapas 2 y 3
 	{
-		g.SetPosicion(550, g.GetYPosicion());
+		g.SetPosicion(557, g.GetYPosicion());
 		g.SetVelocidad(0.0, g.GetYVelocidad());
 	}
 }
