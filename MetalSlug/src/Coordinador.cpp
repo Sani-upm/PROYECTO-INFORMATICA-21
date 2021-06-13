@@ -1,8 +1,10 @@
 #include "Coordinador.h"
+using namespace std;
+
 
 Coordinador::Coordinador()
 {
-	estado=INICIO;
+	estado == INICIO;
 
 }
 
@@ -38,6 +40,22 @@ void Coordinador::Dibuja()
 	{
 		glEnable(GL_TEXTURE_2D);
 		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("bin/Imagenes/instrucciones.png").id);
+		glDisable(GL_LIGHTING);
+		glBegin(GL_POLYGON);
+		glColor3f(1, 1, 1);
+		glTexCoord2d(0, 0); glVertex3f(-9.75, 7.35, -20);
+		glTexCoord2d(1, 0); glVertex3f(9.75, 7.35, -20);
+		glTexCoord2d(1, 1); glVertex3f(9.75, -7.35, -20);
+		glTexCoord2d(0, 1); glVertex3f(-9.75, -7.35, -20);
+		glEnd();
+		glEnable(GL_LIGHTING);
+		glDisable(GL_TEXTURE_2D);
+	}
+
+	else if (estado == OBJETIVOS)
+	{
+		glEnable(GL_TEXTURE_2D);
+		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("bin/Imagenes/objetivos.png").id);
 		glDisable(GL_LIGHTING);
 		glBegin(GL_POLYGON);
 		glColor3f(1, 1, 1);
@@ -115,13 +133,14 @@ void Coordinador::Tecla(unsigned char key)
 		if (key == 's' || key == 'S')
 			exit(0);
 	}
-	else if (estado == INSTRUCCIONES)
+	else if (estado == OBJETIVOS)
 	{
 		if (key == ' ')
 		{
 			estado = JUEGO;
 		}
 	}
+
 	else if (estado == JUEGO)
 	{
 		mundo.Tecla(key);
@@ -137,6 +156,7 @@ void Coordinador::Tecla(unsigned char key)
 		}
 		if (key == 's' || key == 'S')
 		{
+			mundo.checkpoint = -1;
 			estado = INICIO;
 		}
 	}
@@ -145,11 +165,13 @@ void Coordinador::Tecla(unsigned char key)
 	{
 		if (key == ' ')
 		{
+			mundo.checkpoint = -1;
 			estado = INICIO;
 		}
+
 		if (key == 's' || key == 'S')
 		{
-			estado = INICIO;
+			exit(0);
 		}
 	}
 	
@@ -157,6 +179,7 @@ void Coordinador::Tecla(unsigned char key)
 	{
 		if (key == ' ')
 		{
+			mundo.checkpoint = -1;
 			estado = INICIO;
 		}
 		
@@ -170,7 +193,27 @@ void Coordinador::Mueve()
 	if (estado == JUEGO)
 	{
 		mundo.Mueve();
+		if (mundo.GetVida() <= 0)
+		{
+			estado = GAMEOVER;
+		}
+
+		if ((mundo.nivel == 3) && ((mundo.jugador.GetXPosicion() >= 582 && mundo.jugador.GetXPosicion() <= 583)))
+		{
+			estado = EXITO;
+		}
+		if ((mundo.nivel == 1)&&(mundo.jugador.GetXPosicion() >= 226 && mundo.jugador.GetXPosicion() <= 227))
+		{
+			mundo.checkpoint++;
+			mundo.CargarNivel();
+		}	
+		if ((mundo.nivel == 2) && (mundo.jugador.GetXPosicion() >= 556 && mundo.jugador.GetXPosicion() <= 557))
+		{
+			mundo.checkpoint++;
+			mundo.CargarNivel();
+		}
 	}
+
 }
 
 void Coordinador::TeclaEspecial(int key)
@@ -181,15 +224,27 @@ void Coordinador::TeclaEspecial(int key)
 		{
 			estado = INICIO;
 		}
+		if (key == GLUT_KEY_RIGHT)
+		{
+			estado = OBJETIVOS;
+		}
+	}
+
+	if (estado == OBJETIVOS)
+	{
+		if (key == GLUT_KEY_LEFT)
+		{
+			estado = INSTRUCCIONES;
+		}
 	}
 
 	if (estado == JUEGO)
 	{
-		//mundo.TeclaEspecial(key);
+		mundo.TeclaEspecial(key);
 	}
 }
 
 void Coordinador::TeclaArriba(int key)
 {
-	//mundo.TeclaArriba(key);
+	mundo.TeclaArriba(key);
 }

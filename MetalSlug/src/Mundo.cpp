@@ -5,9 +5,9 @@
 
 Mundo::Mundo()
 {
-	x_ojo = 0;
+	x_ojo = -30;
 	y_ojo = 10;
-	z_ojo = 75;
+	z_ojo = 7.5;
 
 }
 
@@ -27,7 +27,7 @@ bool Mundo::CargarNivel()
 {
 	nivel++;
 	jugador.SetVida(vidas);
-	jugador.SetPosicion(-70, 10);
+	jugador.SetPosicion(-75, 10);
 	jugador.SetVelocidad(0, 0);
 	jugador.SetAceleracion(0, -100);
 
@@ -38,7 +38,7 @@ bool Mundo::CargarNivel()
 	{
 		checkpoint = 0;
 
-		niveles.SetLvl2();
+		niveles.SetLvl1();
 		return true;
 	}
 	else if (nivel == 2)
@@ -60,14 +60,11 @@ bool Mundo::CargarNivel()
 }
 void Mundo::Inicializa()
 {
-	x_ojo = 0;
+	x_ojo = -30;
 	y_ojo = 10;
 	z_ojo = 100;//75;
 
-
-	
-
-	jugador.SetPosicion(0, 10);
+	jugador.SetPosicion(-75, 10);
 	jugador.SetVelocidad(0, 0);
 	jugador.SetAceleracion(0, -100);
 
@@ -95,7 +92,7 @@ void Mundo::Dibuja()
 
 	if (nivel == 1)
 	{
-		niveles.DibujarLvl2();
+		niveles.DibujarLvl1();
 	}
 	
 	if (nivel == 2)
@@ -108,7 +105,6 @@ void Mundo::Dibuja()
 	{
 		niveles.DibujarLvl3();
 	}
-
 
 }
 
@@ -139,22 +135,7 @@ void Mundo::Tecla(unsigned char key)
 
 		break;
 	}
-	case 'D':
-	case 'd':
-		jugador.SetVelocidad(30.0f, jugador.GetYVelocidad());
-		break;
-	case 'A':
-	case 'a':
-		jugador.SetVelocidad(-30.0f, jugador.GetYVelocidad());
-		break;
-	case 'W':
-	case 'w':
-		int s = jugador.GetSalto();
-		if (s == 1)
-		{
-			jugador.SetVelocidad(jugador.GetXVelocidad(), 80);
-			jugador.SetSalto(0);
-		}
+
 	}
 	
 }
@@ -164,10 +145,10 @@ void Mundo::TeclaEspecial(unsigned char _key)
 	switch (_key)
 	{
 	case GLUT_KEY_LEFT:
-		jugador.SetVelocidad(-35.0f, jugador.GetYVelocidad());
+		jugador.SetVelocidad(-30.0f, jugador.GetYVelocidad());
 		break;
 	case GLUT_KEY_RIGHT:
-		jugador.SetVelocidad(35.0f, jugador.GetYVelocidad());
+		jugador.SetVelocidad(30.0f, jugador.GetYVelocidad());
 		break;
 
 	case GLUT_KEY_UP:
@@ -194,6 +175,7 @@ void Mundo::TeclaArriba(unsigned char _key)
 	case GLUT_KEY_RIGHT:
 		jugador.SetVelocidad(0, jugador.GetYVelocidad());
 		break;
+
 	}
 }
 
@@ -215,3 +197,13 @@ void Mundo::Mueve()
 
 }
 
+void Mundo::SetVidas(int _vida)
+{
+	jugador.SetVida(_vida);
+	vidas = _vida;
+}
+
+int Mundo::GetVida()
+{
+	return jugador.GetVida();
+}

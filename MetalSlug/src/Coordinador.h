@@ -19,6 +19,6 @@ public:
 protected:
 	Mundo mundo;
 
-	enum Estado{INICIO, INSTRUCCIONES, JUEGO, EXITO, GAMEOVER, PAUSA};
+	enum Estado{INICIO, INSTRUCCIONES, JUEGO, EXITO, GAMEOVER, PAUSA, OBJETIVOS};
 	Estado estado;
 };

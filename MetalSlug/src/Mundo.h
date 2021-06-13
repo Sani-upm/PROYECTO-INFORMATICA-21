@@ -28,15 +28,25 @@ public:
 	void TeclaEspecial(unsigned char key);
 	void TeclaArriba(unsigned char _key);
 
-	// Metodos Set
-	//void SetVidas(int);
+	 //Metodos Set
+	void SetVidas(int);
 
-	// Metodos Get
+	 //Metodos Get
 	
-	//int GetVida();
+	int GetVida();
 
 	//Metodos de los niveles
 	bool CargarNivel();
+
+	int nivel = 0;
+	int checkpoint = -1;
+	int vidas =1;	
+	
+	Hombre jugador;
+	Dragon dragon;
+	ListaDisparos disparos;
+	Niveles niveles;
+	Patata patata;
 
 private:
 	double x_ojo;
@@ -45,13 +55,7 @@ private:
 
 	//Esfera esfera;
 	//Pared  suelo;
-	Hombre jugador;
-	Dragon dragon;
-	ListaDisparos disparos;
-	Niveles niveles;
-	Patata patata;
 
-	int nivel = 0;
-	int checkpoint = -1;
-	int vidas =2;
+
+
 };
