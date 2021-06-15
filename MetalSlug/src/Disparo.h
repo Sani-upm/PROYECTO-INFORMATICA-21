@@ -19,6 +19,7 @@ public:
 
 	void SetPos(float xi, float yi);
 	void SetVel(float vx, float vy);
+	void SetColor(float r, float g, float b);
 
 	//Metodos Get
 

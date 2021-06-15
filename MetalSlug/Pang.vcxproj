@@ -22,10 +22,12 @@
     <ClCompile Include="src\Coordinador.cpp" />
     <ClCompile Include="src\Disparo.cpp" />
     <ClCompile Include="src\Dragon.cpp" />
+    <ClCompile Include="src\Fuego.cpp" />
     <ClCompile Include="src\Hombre.cpp" />
     <ClCompile Include="src\Interacciones.cpp" />
     <ClCompile Include="src\ListaDisparos.cpp" />
     <ClCompile Include="src\ListaDragon.cpp" />
+    <ClCompile Include="src\ListaFuego.cpp" />
     <ClCompile Include="src\ListaPlataformas.cpp" />
     <ClCompile Include="src\MetalSlug.cpp" />
     <ClCompile Include="src\Mundo.cpp" />
@@ -39,10 +41,12 @@
     <ClInclude Include="src\Coordinador.h" />
     <ClInclude Include="src\Disparo.h" />
     <ClInclude Include="src\Dragon.h" />
+    <ClInclude Include="src\Fuego.h" />
     <ClInclude Include="src\Hombre.h" />
     <ClInclude Include="src\Interaccion.h" />
     <ClInclude Include="src\ListaDisparos.h" />
     <ClInclude Include="src\ListaDragon.h" />
+    <ClInclude Include="src\ListaFuego.h" />
     <ClInclude Include="src\ListaPlataformas.h" />
     <ClInclude Include="src\Mundo.h" />
     <ClInclude Include="src\Niveles.h" />

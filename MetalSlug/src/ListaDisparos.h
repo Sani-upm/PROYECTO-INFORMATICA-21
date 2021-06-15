@@ -29,6 +29,7 @@ public:
 
 	//Metodos Get
 	int GetNumero();
+	Disparo* operator [](int i);
 
 private:
 	Disparo* lista[MAX_DISPAROS];

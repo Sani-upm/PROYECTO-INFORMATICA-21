@@ -1,26 +1,25 @@
 #include "Dragon.h"
 #include "freeglut.h"
+#include <Windows.h>
 
-Dragon::Dragon(): Fly("bin/Imagenes/enemigofly.png", 2, 1, 50), Idle("bin/Imagenes/enemigoidle.png", 2, 1, 50), Attack("bin/Imagenes/enemigoattack.png", 5, 1, 50)
+
+Dragon::Dragon(float a, int atacar, float x, float y, float vx, float vy): Fly("bin/Imagenes/enemigofly.png", 2, 1, 50), Idle("bin/Imagenes/enemigoidle.png", 2, 1, 50), Attack("bin/Imagenes/enemigoattack.png", 5, 1, 50)
 {
-	SetAltura(5); //modificar
+	SetAltura(a); //modificar
 
 	Fly.setCenter(0, 0); //modoficar todos los setCenter y setSize
-	Fly.setSize(5, altura);
+	Fly.setSize(a, altura);
 
 	Idle.setCenter(0, 0);
-	Idle.setSize(5, altura);
+	Idle.setSize(a, altura);
 
 	Attack.setCenter(0, 0);
-	Attack.setSize(5, altura);
+	Attack.setSize(a, altura);
 
-	rojo = 255;
-	verde = 0;
-	azul = 0;
-	posicion = 0;
-	velocidad = 0;
-	aceleracion = 0;
-
+	posicion.x = x;
+	posicion.y = y;
+	velocidad.x = vx;
+	velocidad.y = vy;
 }
 
 void Dragon::Dibuja()
@@ -53,6 +52,10 @@ void Dragon::Dibuja()
 	if (atacar == 1)
 	{
 		Attack.draw();
+		/*for (int i = 0; i < llamas.GetNumero(); i++)
+		{
+			llamas[i]->Dibuja();
+		}*/
 	}
 
 	glTranslatef(-posicion.x, -posicion.y, 0);
@@ -68,11 +71,15 @@ void Dragon::Mueve(float t)
 	{
 		Fly.loop();
 		Idle.loop();
+		
 	}
 
 	if (atacar == 1)
 	{
 		Attack.loop();
+		/*for (int i = 0; i < llamas.GetNumero(); i++)
+			llamas[i]->Mueve(0.0025);*/
+
 	}
 
 }
@@ -144,3 +151,9 @@ Vector2D Dragon::GetPosicion()
 {
 	return posicion;
 }
+
+int Dragon::getAtaque()
+{
+	return atacar;
+}
+

@@ -34,11 +34,21 @@ bool Mundo::CargarNivel()
 	disparos.DestruirContenido();
 	niveles.plataformas.DestruirContenido();
 
+	
+
 	if (nivel == 1)
 	{
 		checkpoint = 0;
 
 		niveles.SetLvl1();
+		dragones.destruircontenido();
+		disparos.DestruirContenido();
+		llamas.DestruirContenido();
+		Dragon* aux = new Dragon(8, 0, 0, 0, 0, 0);
+		dragones.agregar(aux);
+		aux = new Dragon(8, 0, 100, 18, 0, 0);
+		dragones.agregar(aux);
+
 		return true;
 	}
 	else if (nivel == 2)
@@ -86,9 +96,11 @@ void Mundo::Dibuja()
 
 	
 	jugador.Dibuja();
-	dragon.Dibuja();
 	disparos.Dibuja();
-	patata.Dibuja();
+	dragones.Dibuja();
+	llamas.Dibuja();
+			
+
 
 	if (nivel == 1)
 	{
@@ -181,21 +193,59 @@ void Mundo::TeclaArriba(unsigned char _key)
 
 void Mundo::Mueve()
 {
-	
+
 
 	//Movimientos de las clases
 	jugador.Mueve(0.025f);
-	dragon.Mueve(0.025f);
 	disparos.Mueve(0.025f);
 	patata.Mueve(0.025f);
-
+	dragones.Mueve(0.025);
+	llamas.Mueve(0.025);
 	//Interacciones entre las clases
-	
+
+
 	Interaccion::Rebote(jugador, nivel);
 	Interaccion::Rebote(jugador, niveles);
 
+	for (int i = 0; i < dragones.getNumero(); i++)
+	{
+		Interaccion::Comportamiento_Dragon(*dragones[i], jugador);
+	}
 
+	for (int i = 0; i < disparos.GetNumero(); i++)
+		for (int j = 0; j < dragones.getNumero(); j++)
+		{
+			bool impacto = Interaccion::Impacto_Dragon(*disparos[i], *dragones[j]);
+			if (impacto == true)
+			{
+				disparos.Eliminar(i);
+				dragones.eliminar(j);
+			}
+		}
+
+	for (int i = 0; i < dragones.getNumero(); i++)
+	{
+		if (dragones[i]->getAtaque() == 1)
+		{
+			if(llamas.GetNumero()<1)
+			{
+				Fuego* aux = new Fuego();
+				aux->SetPos(dragones[i]->GetPosicion().x + 3.0f, dragones[i]->GetPosicion().y + 3);
+				aux->SetVel(-60.0f, 0.0f);
+				llamas.Agregar(aux);
+				for (int j = 0; j < llamas.GetNumero(); j++)
+				{
+					Vector2D distancia =  dragones[i]->GetPosicion() - llamas[j]->GetPos();
+					float modulo = distancia.modulo();
+					if (modulo > 6)
+						llamas.DestruirContenido();
+				}
+			}
+		}
+	}
 }
+
+
 
 void Mundo::SetVidas(int _vida)
 {
@@ -207,3 +257,5 @@ int Mundo::GetVida()
 {
 	return jugador.GetVida();
 }
+
+

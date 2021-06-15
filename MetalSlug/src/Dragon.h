@@ -22,10 +22,11 @@ private:
 	double altura;
 	int atacar = 0;
 
+
+
 public:
 
-	Dragon();
-
+	Dragon(float a, int atacar, float x, float y, float vx, float vy);
 
 	//Metodos GLUT
 	void Dibuja();
@@ -46,8 +47,10 @@ public:
 	float GetYVelocidad();
 	float GetXAceleracion();
 	float GetYAceleracion();
+	int getAtaque();
 	Vector2D GetPosicion();
 
 
 	friend class Interaccion;
+	friend class Mundo;
 };

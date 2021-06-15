@@ -8,6 +8,7 @@
 #include "Niveles.h"
 #include "Patata.h"
 #include "ListaDragon.h"
+#include "ListaFuego.h"
 
 class Mundo
 {
@@ -43,8 +44,9 @@ public:
 	int vidas =1;	
 	
 	Hombre jugador;
-	Dragon dragon;
+	ListaDragones dragones;
 	ListaDisparos disparos;
+	ListaFuego llamas;
 	Niveles niveles;
 	Patata patata;
 

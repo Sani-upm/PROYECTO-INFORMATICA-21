@@ -1,7 +1,5 @@
 #include"Interaccion.h"
 
-
-
 Interaccion::Interaccion()
 {
 }
@@ -58,4 +56,49 @@ void Interaccion::Rebote(Hombre& j, Niveles& nivel)
 {
 	nivel.plataformas.Rebote(j);
 
+}
+
+bool Interaccion::Comportamiento_Dragon(Dragon& d, Hombre& h)
+{
+	Vector2D distancia = d.posicion - h.posicion;
+	Vector2D unitario = distancia.unitario();
+	float modulo = distancia.modulo();
+
+	
+
+	if (modulo < 40)
+	{
+		d.atacar = 1;
+		d.SetVelocidad((-15 * unitario.x), (-15 * unitario.y));
+		
+
+		if (modulo <= 3)
+		{
+			h.SetPosicion(-70, 0);
+			h.SetVelocidad(0, 0);
+		}
+		return true;
+	}
+
+	else
+	{
+		d.SetVelocidad(0, 0);
+		d.atacar = 0;
+
+		return false;
+	}
+}
+
+bool Interaccion::Impacto_Dragon(Disparo& disp, Dragon& d)
+{
+	float altura_real = d.posicion.y + 6;
+	Vector2D  posicion_real(d.posicion.x, altura_real);
+	Vector2D distancia = disp.posicion - posicion_real;
+	float modulo = distancia.modulo();
+
+	if (modulo < 2.5)
+		return true;
+	else
+		return false;
+	
 }
