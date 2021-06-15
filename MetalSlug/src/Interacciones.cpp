@@ -46,7 +46,7 @@ void Interaccion::Rebote(Hombre& j, Pared& p)
 	
 	if ((j.GetYPosicion() < p.GetYsuperior() + 1) && (j.GetYPosicion() > p.GetYsuperior() - 1) && (j.GetXPosicion() > p.GetXi()) && (j.GetXPosicion() < p.GetXd()))
 	{
-		j.SetPosicion(j.GetXPosicion(), p.GetYsuperior() + 1.0f);
+		j.SetPosicion(j.GetXPosicion(), (float)p.GetYsuperior() + (float)1.0f);
 		j.SetVelocidad(j.GetXVelocidad(), 0);
 		j.SetSalto(1);
 	}
@@ -66,16 +66,17 @@ bool Interaccion::Comportamiento_Dragon(Dragon& d, Hombre& h)
 
 	
 
-	if (modulo < 40)
+	if (modulo < 70)
 	{
 		d.atacar = 1;
-		d.SetVelocidad((-15 * unitario.x), (-15 * unitario.y));
+		d.SetVelocidad(((float)-15.0f * (float)unitario.x), ((float)-15.0f * (float)unitario.y));
 		
 
 		if (modulo <= 3)
 		{
-			h.SetPosicion(-70, 0);
-			h.SetVelocidad(0, 0);
+			h.SetVida(0);
+			//h.SetPosicion(-70, 0);
+			//h.SetVelocidad(0, 0);
 		}
 		return true;
 	}
@@ -101,4 +102,18 @@ bool Interaccion::Impacto_Dragon(Disparo& disp, Dragon& d)
 	else
 		return false;
 	
+}
+
+bool Interaccion::Rebote_Ataque_Dragon(Fuego& f, Hombre& h)
+{
+	float altura_real = h.posicion.y + 6;
+	Vector2D  posicion_real(h.posicion.x, altura_real);
+	Vector2D distancia = f.posicion - posicion_real;
+	float modulo = distancia.modulo();
+
+	if (modulo < 2.5)
+		return true;
+	else
+		return false;
+
 }

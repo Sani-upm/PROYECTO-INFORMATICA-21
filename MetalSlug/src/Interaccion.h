@@ -22,6 +22,7 @@ public:
 	static void Rebote(Hombre&, Niveles&);
 	static bool Comportamiento_Dragon(Dragon& d, Hombre& h);
 	static bool Impacto_Dragon(Disparo& disp, Dragon& d);
+	static bool Rebote_Ataque_Dragon(Fuego& f, Hombre& h);
 private:
 
 };

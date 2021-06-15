@@ -57,6 +57,15 @@ bool Mundo::CargarNivel()
 
 
 		niveles.SetLvl2();
+		dragones.destruircontenido();
+		disparos.DestruirContenido();
+		llamas.DestruirContenido();
+
+		Dragon* aux = new Dragon(8, 0, 20, 0, 0, 0);
+		dragones.agregar(aux);
+		aux = new Dragon(8, 0, 100, 18, 0, 0);
+		dragones.agregar(aux);
+
 		return true;
 	}
 	else if (nivel == 3)
@@ -65,6 +74,14 @@ bool Mundo::CargarNivel()
 
 
 		niveles.SetLvl3();
+		dragones.destruircontenido();
+		disparos.DestruirContenido();
+		llamas.DestruirContenido();
+
+		Dragon* aux = new Dragon(8, 0, 0, 0, 0, 0);
+		dragones.agregar(aux);
+		aux = new Dragon(8, 0, 100, 18, 0, 0);
+		dragones.agregar(aux);
 		return true;
 	}
 }
@@ -222,28 +239,46 @@ void Mundo::Mueve()
 				dragones.eliminar(j);
 			}
 		}
+	for (int i = 0; i < llamas.GetNumero(); i++)
+	{
+		bool impacto = Interaccion::Rebote_Ataque_Dragon(*llamas[i], jugador);
+		if (impacto == true)
+		{
+			jugador.SetVida(0);
+		}
+	}
+
 
 	for (int i = 0; i < dragones.getNumero(); i++)
 	{
-		if (dragones[i]->getAtaque() == 1)
+		if (dragones[i]->getAtaque() == 1) 
 		{
 			if(llamas.GetNumero()<1)
 			{
 				Fuego* aux = new Fuego();
 				aux->SetPos(dragones[i]->GetPosicion().x + 3.0f, dragones[i]->GetPosicion().y + 3);
-				aux->SetVel(-60.0f, 0.0f);
+				Vector2D direccion_unitaria = jugador.GetPosicion().unitario();
+				
+				aux->SetVel(30.0f *direccion_unitaria.x, 30.0f * direccion_unitaria.y);
+				//aux->SetVel(-60.0f, 0.0f);
 				llamas.Agregar(aux);
-				for (int j = 0; j < llamas.GetNumero(); j++)
-				{
-					Vector2D distancia =  dragones[i]->GetPosicion() - llamas[j]->GetPos();
-					float modulo = distancia.modulo();
-					if (modulo > 6)
-						llamas.DestruirContenido();
-				}
+				
 			}
 		}
 	}
+	for (int j = 0; j < llamas.GetNumero(); j++)
+	{
+
+			Vector2D distancia = jugador.GetPosicion() - llamas[j]->GetPos();
+			float modulo = distancia.modulo();
+			if (modulo > 100)
+				llamas.Eliminar(j);
+		
+	}
+
+
 }
+
 
 
 
