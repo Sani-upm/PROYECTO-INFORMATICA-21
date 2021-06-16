@@ -2,7 +2,7 @@
 #include "Vector2D.h"
 #include "freeglut.h"
 
-Fuego::Fuego() : fuegodragon("bin/Imagenes/fuegodragon.png", 5, 1, 100)
+Fuego::Fuego() : fuegodragon("bin/Imagenes/fuegodragon.png", 3, 1, 100)
 {
 	radio = 0.5f;
 	rojo = 255;

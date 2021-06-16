@@ -3,16 +3,15 @@
 #include <Windows.h>
 
 
-Dragon::Dragon(float a, int atacar, float x, float y, float vx, float vy): Fly("bin/Imagenes/enemigofly.png", 2, 1, 200), Idle("bin/Imagenes/enemigoidle.png", 2, 1, 50), Attack("bin/Imagenes/dragonataque.png", 2, 1, 250)
+Dragon::Dragon(float a, int atacar, float x, float y, float vx, float vy): Fly("bin/Imagenes/enemigofly.png", 2, 1, 50), Idle("bin/Imagenes/enemigoidle.png", 2, 1, 50), Attack("bin/Imagenes/enemigoattack.png", 5, 1, 50)
 {
-	SetAltura(15); //modificar
-	a = 10;
+	SetAltura(a); //modificar
 
 	Fly.setCenter(0, 0); //modoficar todos los setCenter y setSize
 	Fly.setSize(a, altura);
 
 	Idle.setCenter(0, 0);
-	Idle.setSize(a,10);
+	Idle.setSize(a, altura);
 
 	Attack.setCenter(0, 0);
 	Attack.setSize(a, altura);
