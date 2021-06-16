@@ -198,16 +198,16 @@ void Coordinador::Mueve()
 			estado = GAMEOVER;
 		}
 
-		if ((mundo.nivel == 3) && ((mundo.jugador.GetXPosicion() >= 582 && mundo.jugador.GetXPosicion() <= 583)))
+		if ((mundo.nivel == 3) && ((mundo.jugador.getPos().x >= 582 && mundo.jugador.getPos().x <= 583)))
 		{
 			estado = EXITO;
 		}
-		if ((mundo.nivel == 1)&&(mundo.jugador.GetXPosicion() >= 226 && mundo.jugador.GetXPosicion() <= 227))
+		if ((mundo.nivel == 1)&&(mundo.jugador.getPos().x >= 226 && mundo.jugador.getPos().x <= 227) && mundo.getDragones() == 0)
 		{
 			mundo.checkpoint++;
 			mundo.CargarNivel();
 		}	
-		if ((mundo.nivel == 2) && (mundo.jugador.GetXPosicion() >= 556 && mundo.jugador.GetXPosicion() <= 557))
+		if ((mundo.nivel == 2) && (mundo.jugador.getPos().x >= 556 && mundo.jugador.getPos().x <= 557))
 		{
 			mundo.checkpoint++;
 			mundo.CargarNivel();

@@ -27,14 +27,12 @@ bool Mundo::CargarNivel()
 {
 	nivel++;
 	jugador.SetVida(vidas);
-	jugador.SetPosicion(-75, 10);
-	jugador.SetVelocidad(0, 0);
-	jugador.SetAceleracion(0, -100);
+	jugador.setPos(-75, 10);
+	jugador.setVel(0, 0);
+	jugador.setAcel(0, -100);
 
 	disparos.DestruirContenido();
 	niveles.plataformas.DestruirContenido();
-
-	
 
 	if (nivel == 1)
 	{
@@ -54,7 +52,6 @@ bool Mundo::CargarNivel()
 	else if (nivel == 2)
 	{
 		checkpoint = 1;
-
 
 		niveles.SetLvl2();
 		dragones.destruircontenido();
@@ -91,9 +88,9 @@ void Mundo::Inicializa()
 	y_ojo = 10;
 	z_ojo = 100;//75;
 
-	jugador.SetPosicion(-75, 10);
-	jugador.SetVelocidad(0, 0);
-	jugador.SetAceleracion(0, -100);
+	jugador.setPos(-75, 10);
+	jugador.setVel(0, 0);
+	jugador.setAcel(0, -100);
 
 	if (checkpoint == -1)
 		nivel = 0;
@@ -105,7 +102,7 @@ void Mundo::Inicializa()
 }
 void Mundo::Dibuja()
 {
-	x_ojo = jugador.GetXPosicion();
+	x_ojo = jugador.getPos().x;
 
 	gluLookAt(x_ojo, y_ojo, z_ojo,		  // posicion del ojo
 		x_ojo, 0, 0.0,				 // hacia que punto mira  (0,0,0) 
@@ -143,22 +140,22 @@ void Mundo::Tecla(unsigned char key)
 	{
 	case ' ':
 		
-	if(jugador.GetXVelocidad() >=0)
+	if(jugador.getVel().x >=0)
 		{
 		Disparo* d = new Disparo();
-		d->SetPos(jugador.GetPosicion().x + 3.0f, (jugador.GetPosicion().y + (jugador.GetAltura() / 2)));
-		d->SetVel(100.0f, 0.0f);
+		d->setPos(jugador.getPos().x + 3.0f, (jugador.getPos().y + (jugador.GetAltura() / 2)));
+		d->setVel(100.0f, 0.0f);
 
 		disparos.Agregar(d);
 
 		break;
 		}
 	
-	if (jugador.GetXVelocidad() < 0)
+	if (jugador.getVel().x < 0)
 	{
 		Disparo* d = new Disparo();
-		d->SetPos(jugador.GetPosicion().x + 3.0f, (jugador.GetPosicion().y + (jugador.GetAltura() / 2)));
-		d->SetVel(-100.0f, 0.0f);
+		d->setPos(jugador.getPos().x + 3.0f, (jugador.getPos().y + (jugador.GetAltura() / 2)));
+		d->setVel(-100.0f, 0.0f);
 
 		disparos.Agregar(d);
 
@@ -166,7 +163,6 @@ void Mundo::Tecla(unsigned char key)
 	}
 
 	}
-	
 }
 
 void Mundo::TeclaEspecial(unsigned char _key)
@@ -174,10 +170,10 @@ void Mundo::TeclaEspecial(unsigned char _key)
 	switch (_key)
 	{
 	case GLUT_KEY_LEFT:
-		jugador.SetVelocidad(-30.0f, jugador.GetYVelocidad());
+		jugador.setVel(-30.0f, jugador.getVel().y);
 		break;
 	case GLUT_KEY_RIGHT:
-		jugador.SetVelocidad(30.0f, jugador.GetYVelocidad());
+		jugador.setVel(30.0f, jugador.getVel().y);
 		break;
 
 	case GLUT_KEY_UP:
@@ -185,7 +181,7 @@ void Mundo::TeclaEspecial(unsigned char _key)
 		int s = jugador.GetSalto();
 		if (s == 1)
 		{
-			jugador.SetVelocidad(jugador.GetXVelocidad(), 80);
+			jugador.setVel(jugador.getVel().x, 80);
 			jugador.SetSalto(0);
 		}
 		//	ETSIDI::play("sonidos/SaltoRemy.mp3");
@@ -199,27 +195,33 @@ void Mundo::TeclaArriba(unsigned char _key)
 	switch (_key)
 	{
 	case GLUT_KEY_LEFT:
-		jugador.SetVelocidad(0, jugador.GetYVelocidad());
+		jugador.setVel(0, jugador.getVel().y);
 		break;
 	case GLUT_KEY_RIGHT:
-		jugador.SetVelocidad(0, jugador.GetYVelocidad());
+		jugador.setVel(0, jugador.getVel().y);
 		break;
-
 	}
+}
+
+int Mundo::getDragones()
+{
+	int d = 0;
+	for (int i = 0; i < dragones.getNumero(); i++)
+	{
+		if (dragones[i] != 0)
+			d = 1;
+	}
+	return d;
 }
 
 void Mundo::Mueve()
 {
-
-
 	//Movimientos de las clases
 	jugador.Mueve(0.025f);
 	disparos.Mueve(0.025f);
-	patata.Mueve(0.025f);
 	dragones.Mueve(0.025);
 	llamas.Mueve(0.025);
 	//Interacciones entre las clases
-
 
 	Interaccion::Rebote(jugador, nivel);
 	Interaccion::Rebote(jugador, niveles);
@@ -256,11 +258,9 @@ void Mundo::Mueve()
 			if(llamas.GetNumero()<1)
 			{
 				Fuego* aux = new Fuego();
-				aux->SetPos(dragones[i]->GetPosicion().x + 3.0f, dragones[i]->GetPosicion().y + 3);
-				Vector2D direccion_unitaria = (jugador.GetPosicion()-dragones[i]->GetPosicion()).unitario();
-				
-				aux->SetVel(30.0f *direccion_unitaria.x, 30.0f * direccion_unitaria.y);
-				//aux->SetVel(-60.0f, 0.0f);
+				aux->setPos(dragones[i]->getPos().x + 3.0f, dragones[i]->getPos().y + 3);
+				Vector2D direccion_unitaria = (jugador.getPos()-dragones[i]->getPos()).unitario();
+				aux->setVel(30.0f *direccion_unitaria.x, 30.0f * direccion_unitaria.y);
 				llamas.Agregar(aux);
 				
 			}
@@ -268,15 +268,11 @@ void Mundo::Mueve()
 	}
 	for (int j = 0; j < llamas.GetNumero(); j++)
 	{
-
-			Vector2D distancia = jugador.GetPosicion() - llamas[j]->GetPos();
+			Vector2D distancia = jugador.getPos() - llamas[j]->getPos();
 			float modulo = distancia.modulo();
 			if (modulo > 100)
 				llamas.Eliminar(j);
-		
 	}
-
-
 }
 
 
