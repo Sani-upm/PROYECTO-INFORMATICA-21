@@ -42,10 +42,13 @@ bool Mundo::CargarNivel()
 		dragones.destruircontenido();
 		disparos.DestruirContenido();
 		llamas.DestruirContenido();
-		Dragon* aux = new Dragon(8, 0, 20, 0, 0, 0);
+		Dragon* aux = new Dragon(15, 0, 20, 0, 0, 0);
 		dragones.agregar(aux);
-		aux = new Dragon(8, 0, 100, 18, 0, 0);
+		aux = new Dragon(15, 0, 100, 18, 0, 0);
 		dragones.agregar(aux);
+
+		ETSIDI::stopMusica();
+		ETSIDI::playMusica("bin/Sonidos/nivel1.mp3", TRUE);
 
 		return true;
 	}
@@ -58,14 +61,18 @@ bool Mundo::CargarNivel()
 		disparos.DestruirContenido();
 		llamas.DestruirContenido();
 
-		Dragon* aux = new Dragon(8, 0, 20, 0, 0, 0);
+		Dragon* aux = new Dragon(15, 0, 40, 0, 0, 0);
 		dragones.agregar(aux);
-		aux = new Dragon(8, 0, 100, 18, 0, 0);
+		aux = new Dragon(15, 0, 100, 18, 0, 0);
 		dragones.agregar(aux);
-		aux = new Dragon(8, 0, 150, 0, 0, 0);
+		aux = new Dragon(15, 0, 200, 0, 0, 0);
 		dragones.agregar(aux);
-		aux = new Dragon(8, 0, 200, 0, 0, 0);
+		aux = new Dragon(15, 0, 300, 0, 0, 0);
 		dragones.agregar(aux);
+
+
+		ETSIDI::stopMusica();
+		ETSIDI::playMusica("bin/Sonidos/nivel2.mp3", TRUE);
 
 		return true;
 	}
@@ -79,17 +86,19 @@ bool Mundo::CargarNivel()
 		disparos.DestruirContenido();
 		llamas.DestruirContenido();
 
-		Dragon* aux = new Dragon(8, 0, 0, 0, 0, 0);
+		Dragon* aux = new Dragon(15, 0, 50, 0, 0, 0);
 		dragones.agregar(aux);
-		aux = new Dragon(8, 0, 100, 18, 0, 0);
+		aux = new Dragon(15, 0, 120, 18, 0, 0);
 		dragones.agregar(aux);
-		aux = new Dragon(8, 0, 150, 0, 0, 0);
+		aux = new Dragon(15, 0, 200, 0, 0, 0);
 		dragones.agregar(aux);
-		aux = new Dragon(8, 0, 200, 0, 0, 0);
+		aux = new Dragon(15, 0, 275, 0, 0, 0);
 		dragones.agregar(aux);
-		aux = new Dragon(8, 0, 210, 0, 0, 0);
+		aux = new Dragon(15, 0, 350, 0, 0, 0);
 		dragones.agregar(aux);
-		aux = new Dragon(8, 0, 250, 0, 0, 0);
+		aux = new Dragon(15, 0, 400, 0, 0, 0);
+		dragones.agregar(aux);
+		aux = new Dragon(15, 0, 500, 0, 0, 0);
 		dragones.agregar(aux);
 		return true;
 
@@ -156,6 +165,7 @@ void Mundo::Tecla(unsigned char key)
 	if(jugador.getVel().x >=0)
 		{
 		Disparo* d = new Disparo();
+		ETSIDI::play("bin/Sonidos/disparo.mp3");
 		d->setPos(jugador.getPos().x + 3.0f, (jugador.getPos().y + (jugador.GetAltura() / 2)));
 		d->setVel(100.0f, 0.0f);
 
@@ -167,6 +177,7 @@ void Mundo::Tecla(unsigned char key)
 	if (jugador.getVel().x < 0)
 	{
 		Disparo* d = new Disparo();
+		ETSIDI::play("bin/Sonidos/disparo.mp3");
 		d->setPos(jugador.getPos().x + 3.0f, (jugador.getPos().y + (jugador.GetAltura() / 2)));
 		d->setVel(-100.0f, 0.0f);
 
@@ -197,7 +208,7 @@ void Mundo::TeclaEspecial(unsigned char _key)
 			jugador.setVel(jugador.getVel().x, 80);
 			jugador.SetSalto(0);
 		}
-		//	ETSIDI::play("sonidos/SaltoRemy.mp3");
+		ETSIDI::play("bin/Sonidos/Salto.mp3");
 
 		break;
 	}

@@ -98,7 +98,7 @@ void Niveles::SetLvl3()
 	plataformas.Agregar(aux);
 	aux = new Pared(505.5, -4.25, 0.0f, 16);// 19
 	plataformas.Agregar(aux);
-	aux = new Pared(521.5, 4, 0.0f, 61);// 20
+	aux = new Pared(521.5, 4, 0.0f, 71);// 20
 	plataformas.Agregar(aux);
 }
 
@@ -229,8 +229,8 @@ void Niveles::DibujarLvl3()
 	glBegin(GL_POLYGON);
 	glColor3f(1, 1, 1);
 	glTexCoord2d(0, 0); glVertex3f(-80, 38, -10);
-	glTexCoord2d(1, 0); glVertex3f(550, 38, -10);
-	glTexCoord2d(1, 1); glVertex3f(550, -43, -10);
+	glTexCoord2d(1, 0); glVertex3f(551, 38, -10);
+	glTexCoord2d(1, 1); glVertex3f(551, -43, -10);
 	glTexCoord2d(0, 1); glVertex3f(-80, -43, -10);
 	glEnd();
 	glEnable(GL_LIGHTING);
@@ -242,10 +242,10 @@ void Niveles::DibujarLvl3()
 	glDisable(GL_LIGHTING);
 	glBegin(GL_POLYGON);
 	glColor3f(1, 1, 1);
-	glTexCoord2d(0, 0); glVertex3f(545, 38, -10);
-	glTexCoord2d(1, 0); glVertex3f(1175, 38, -10);
-	glTexCoord2d(1, 1); glVertex3f(1175, -43, -10);
-	glTexCoord2d(0, 1); glVertex3f(545, -43, -10);
+	glTexCoord2d(0, 0); glVertex3f(549, 38, -10);
+	glTexCoord2d(1, 0); glVertex3f(1177.5, 38, -10);
+	glTexCoord2d(1, 1); glVertex3f(1177.5, -43, -10);
+	glTexCoord2d(0, 1); glVertex3f(549, -43, -10);
 	glEnd();
 	glEnable(GL_LIGHTING);
 	glDisable(GL_TEXTURE_2D);

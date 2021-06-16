@@ -33,12 +33,18 @@ void Interaccion::Rebote(Hombre& g, int& n)
 		g.setPos(227, g.getPos().y);
 		g.setVel(0.0, g.getVel().y);
 	}
-	if (n != 1 && g.getPos().x > 600)		//colision pared final mapas 2 y 3
+	if (n == 2 && g.getPos().x > 557)		//colision pared final mapas 2 y 3
 	{
 		g.setPos(557, g.getPos().y);
 		g.setVel(0.0, g.getVel().y);
 	}
+	if (n == 3 && g.getPos().x > 583)		//colision pared final mapas 2 y 3
+	{
+		g.setPos(583, g.getPos().y);
+		g.setVel(0.0, g.getVel().y);
+	}
 }
+
 
 //Rebote contra una pared
 void Interaccion::Rebote(Hombre& j, Pared& p)
@@ -65,7 +71,7 @@ bool Interaccion::Comportamiento_Dragon(Dragon& d, Hombre& h)
 
 	
 
-	if (modulo < 60)
+	if (modulo < 65)
 	{
 		d.atacar = 1;
 		d.setVel(((float)-15.0f * (float)unitario.x), ((float)-15.0f * (float)unitario.y));
