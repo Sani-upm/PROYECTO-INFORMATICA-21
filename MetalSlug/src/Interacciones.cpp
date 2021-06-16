@@ -65,7 +65,7 @@ bool Interaccion::Comportamiento_Dragon(Dragon& d, Hombre& h)
 
 	
 
-	if (modulo < 40)
+	if (modulo < 60)
 	{
 		d.atacar = 1;
 		d.setVel(((float)-15.0f * (float)unitario.x), ((float)-15.0f * (float)unitario.y));

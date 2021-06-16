@@ -15,7 +15,19 @@ void Fuego::Dibuja()
 {
 	glPushMatrix();
 	glTranslatef(posicion.x, posicion.y, 0);
+	if (velocidad.GetX() > 0.01)
+	{
+		fuegodragon.flip(false, false);
+		
+	}
+	else if (velocidad.GetX() < -0.01)
+	{
+		fuegodragon.flip(true, false);
+		
+	}
 	fuegodragon.draw();
+
+	glTranslatef(-posicion.GetX(), -posicion.GetY(), 0);
 	glPopMatrix();
 }
 

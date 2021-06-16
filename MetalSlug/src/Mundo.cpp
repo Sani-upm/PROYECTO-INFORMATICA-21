@@ -42,7 +42,7 @@ bool Mundo::CargarNivel()
 		dragones.destruircontenido();
 		disparos.DestruirContenido();
 		llamas.DestruirContenido();
-		Dragon* aux = new Dragon(8, 0, 0, 0, 0, 0);
+		Dragon* aux = new Dragon(8, 0, 20, 0, 0, 0);
 		dragones.agregar(aux);
 		aux = new Dragon(8, 0, 100, 18, 0, 0);
 		dragones.agregar(aux);
@@ -62,6 +62,10 @@ bool Mundo::CargarNivel()
 		dragones.agregar(aux);
 		aux = new Dragon(8, 0, 100, 18, 0, 0);
 		dragones.agregar(aux);
+		aux = new Dragon(8, 0, 150, 0, 0, 0);
+		dragones.agregar(aux);
+		aux = new Dragon(8, 0, 200, 0, 0, 0);
+		dragones.agregar(aux);
 
 		return true;
 	}
@@ -79,7 +83,16 @@ bool Mundo::CargarNivel()
 		dragones.agregar(aux);
 		aux = new Dragon(8, 0, 100, 18, 0, 0);
 		dragones.agregar(aux);
+		aux = new Dragon(8, 0, 150, 0, 0, 0);
+		dragones.agregar(aux);
+		aux = new Dragon(8, 0, 200, 0, 0, 0);
+		dragones.agregar(aux);
+		aux = new Dragon(8, 0, 210, 0, 0, 0);
+		dragones.agregar(aux);
+		aux = new Dragon(8, 0, 250, 0, 0, 0);
+		dragones.agregar(aux);
 		return true;
+
 	}
 }
 void Mundo::Inicializa()
@@ -170,10 +183,10 @@ void Mundo::TeclaEspecial(unsigned char _key)
 	switch (_key)
 	{
 	case GLUT_KEY_LEFT:
-		jugador.setVel(-30.0f, jugador.getVel().y);
+		jugador.setVel(-37.0f, jugador.getVel().y);
 		break;
 	case GLUT_KEY_RIGHT:
-		jugador.setVel(30.0f, jugador.getVel().y);
+		jugador.setVel(37.0f, jugador.getVel().y);
 		break;
 
 	case GLUT_KEY_UP:
