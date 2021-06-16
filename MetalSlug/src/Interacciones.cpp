@@ -66,10 +66,10 @@ bool Interaccion::Comportamiento_Dragon(Dragon& d, Hombre& h)
 
 	
 
-	if (modulo < 70)
+	if (modulo < 50)
 	{
 		d.atacar = 1;
-		d.SetVelocidad(((float)-15.0f * (float)unitario.x), ((float)-15.0f * (float)unitario.y));
+		d.SetVelocidad(((float)-10.0f * (float)unitario.x), ((float)-10.0f * (float)unitario.y));
 		
 
 		if (modulo <= 3)
@@ -83,7 +83,7 @@ bool Interaccion::Comportamiento_Dragon(Dragon& d, Hombre& h)
 
 	else
 	{
-		d.SetVelocidad(0, 0);
+		d.SetVelocidad(0,0);
 		d.atacar = 0;
 
 		return false;
@@ -117,3 +117,4 @@ bool Interaccion::Rebote_Ataque_Dragon(Fuego& f, Hombre& h)
 		return false;
 
 }
+

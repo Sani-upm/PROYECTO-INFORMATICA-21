@@ -20,6 +20,7 @@ void Disparo::Dibuja()
 	glColor3f(rojo,verde , azul);
 	glTranslatef(posicion.x, posicion.y, 0);
 	disparo.draw();
+	glTranslatef(-posicion.x, -posicion.y, 0);
 	glPopMatrix();
 }
 

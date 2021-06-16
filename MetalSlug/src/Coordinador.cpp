@@ -5,7 +5,7 @@ using namespace std;
 Coordinador::Coordinador()
 {
 	estado == INICIO;
-
+	ETSIDI::playMusica("bin/Sonidos/inicio.mp3", TRUE);
 }
 
 Coordinador::~Coordinador()
@@ -127,7 +127,6 @@ void Coordinador::Tecla(unsigned char key)
 	{
 		if (key == ' ')
 		{
-			mundo.Inicializa();
 			estado = INSTRUCCIONES;
 		}
 		if (key == 's' || key == 'S')
@@ -137,6 +136,7 @@ void Coordinador::Tecla(unsigned char key)
 	{
 		if (key == ' ')
 		{
+			mundo.Inicializa();
 			estado = JUEGO;
 		}
 	}
@@ -145,7 +145,9 @@ void Coordinador::Tecla(unsigned char key)
 	{
 		mundo.Tecla(key);
 		if (key == 'p' || key == 'P')
+		{
 			estado = PAUSA;
+		}
 	}
 	
 	else if (estado == PAUSA)
@@ -157,6 +159,7 @@ void Coordinador::Tecla(unsigned char key)
 		if (key == 's' || key == 'S')
 		{
 			mundo.checkpoint = -1;
+			ETSIDI::playMusica("bin/Sonidos/inicio.mp3", TRUE);
 			estado = INICIO;
 		}
 	}
@@ -164,8 +167,9 @@ void Coordinador::Tecla(unsigned char key)
 	else if (estado == GAMEOVER)
 	{
 		if (key == ' ')
-		{
+		{ 
 			mundo.checkpoint = -1;
+			ETSIDI::playMusica("bin/Sonidos/inicio.mp3", TRUE);
 			estado = INICIO;
 		}
 
@@ -180,6 +184,7 @@ void Coordinador::Tecla(unsigned char key)
 		if (key == ' ')
 		{
 			mundo.checkpoint = -1;
+			ETSIDI::playMusica("bin/Sonidos/inicio.mp3", TRUE);
 			estado = INICIO;
 		}
 		
@@ -195,11 +200,15 @@ void Coordinador::Mueve()
 		mundo.Mueve();
 		if (mundo.GetVida() <= 0)
 		{
+			ETSIDI::stopMusica();
+			ETSIDI::play("bin/Sonidos/gameover.mp3");
 			estado = GAMEOVER;
 		}
 
 		if ((mundo.nivel == 3) && ((mundo.jugador.GetXPosicion() >= 582 && mundo.jugador.GetXPosicion() <= 583)))
 		{
+			ETSIDI::stopMusica();
+			ETSIDI::play("bin/Sonidos/exito.mp3");
 			estado = EXITO;
 		}
 		if ((mundo.nivel == 1)&&(mundo.jugador.GetXPosicion() >= 226 && mundo.jugador.GetXPosicion() <= 227))
@@ -210,6 +219,8 @@ void Coordinador::Mueve()
 		if ((mundo.nivel == 2) && (mundo.jugador.GetXPosicion() >= 556 && mundo.jugador.GetXPosicion() <= 557))
 		{
 			mundo.checkpoint++;
+			ETSIDI::stopMusica();
+			ETSIDI::playMusica("bin/Sonidos/nivel3.mp3", TRUE);
 			mundo.CargarNivel();
 		}
 	}
