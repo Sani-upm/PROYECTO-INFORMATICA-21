@@ -3,102 +3,102 @@
 
 void Niveles::SetLvl1()
 {
-	Pared* aux = new Pared(-5, -12, 0.5f, 18);
+	Pared* aux = new Pared(-5, -12, 0.0f, 18);
 	plataformas.Agregar(aux);
-	aux = new Pared(40, 1, 0.5f, 27);
+	aux = new Pared(40, 1, 0.f, 27);
 	plataformas.Agregar(aux);
-	aux = new Pared(-80, -21, 0.5f, 69);
+	aux = new Pared(-80, -21, 0.0f, 69);
 	plataformas.Agregar(aux);
-	aux = new Pared(23, -21, 0.5f, 63);
+	aux = new Pared(23, -21, 0.0f, 63);
 	plataformas.Agregar(aux);
-	aux = new Pared(53, 14, 0.5f, 75);
+	aux = new Pared(53, 14, 0.0f, 75);
 	plataformas.Agregar(aux);
-	aux = new Pared(140, 2, 0.5f, 18);
+	aux = new Pared(140, 2, 0.0f, 18);
 	plataformas.Agregar(aux);
-	aux = new Pared(143, -21, 0.5f, 90);
+	aux = new Pared(143, -21, 0.0f, 90);
 	plataformas.Agregar(aux);
 	
 }
 
 void Niveles::SetLvl2()
 {
-	Pared* aux = new Pared(-24, -13, 0.5f, 17); // 3
+	Pared* aux = new Pared(-24, -13, 0.0f, 17); // 3
 	plataformas.Agregar(aux);
-	aux = new Pared(65, -4, 0.5f, 23.5);// 5
+	aux = new Pared(65, -4, 0.0f, 23.5);// 5
 	plataformas.Agregar(aux);
-	aux = new Pared(-80, -4, 0.5f, 31);// 1
+	aux = new Pared(-80, -4, 0.0f, 31);// 1
 	plataformas.Agregar(aux);
-	aux = new Pared(-50, -13, 0.5f, 17);// 2
+	aux = new Pared(-50, -13, 0.0f, 17);// 2
 	plataformas.Agregar(aux);
-	aux = new Pared(98, 16, 0.5f, 16.5); //6
+	aux = new Pared(98, 16, 0.0f, 16.5); //6
 	plataformas.Agregar(aux);
-	aux = new Pared(8, 5, 0.5f, 33);// 4
+	aux = new Pared(8, 5, 0.0f, 33);// 4
 	plataformas.Agregar(aux);
-	aux = new Pared(123, -12, 0.5f, 8.5);// 7
+	aux = new Pared(123, -12, 0.0f, 8.5);// 7
 	plataformas.Agregar(aux);
-	aux = new Pared(130.3, -3, 0.5f, 25.5);// 8 
+	aux = new Pared(130.3, -3, 0.0f, 25.5);// 8 
 	plataformas.Agregar(aux);
-	aux = new Pared(155.5, -20, 0.5f, 33);// 9 
+	aux = new Pared(155.5, -20, 0.0f, 33);// 9 
 	plataformas.Agregar(aux);
-	aux = new Pared(210, 3, 0.5f, 32); //10
+	aux = new Pared(210, 3, 0.0f, 32); //10
 	plataformas.Agregar(aux);
-	aux = new Pared(268, 9.5, 0.5f, 15.5);// 11
+	aux = new Pared(268, 9.5, 0.0f, 15.5);// 11
 	plataformas.Agregar(aux);
-	aux = new Pared(305, -4, 0.5f, 32);// 12
+	aux = new Pared(305, -4, 0.0f, 32);// 12
 	plataformas.Agregar(aux);
-	aux = new Pared(364.5, 7.6, 0.5f, 24);// 13
+	aux = new Pared(364.5, 7.6, 0.0f, 24);// 13
 	plataformas.Agregar(aux);
-	aux = new Pared(426.5, -20.5, 0.5f, 45); //14
+	aux = new Pared(426.5, -20.5, 0.0f, 45); //14
 	plataformas.Agregar(aux);
-	aux = new Pared(446, -5.2, 0.5f, 46);// 15
+	aux = new Pared(446, -5.2, 0.0f, 46);// 15
 	plataformas.Agregar(aux);
-	aux = new Pared(485, 11, 0.5f, 45.5);// 16
+	aux = new Pared(485, 11, 0.0f, 45.5);// 16
 	plataformas.Agregar(aux);
-	aux = new Pared(530.5, -15, 0.5f, 30);// 17
+	aux = new Pared(530.5, -15, 0.0f, 30);// 17
 	plataformas.Agregar(aux);
 }
 
 void Niveles::SetLvl3()
 {
-	Pared* aux = new Pared(-22.5, -16.5, 0.5f, 25.5); // 3
+	Pared* aux = new Pared(-22.5, -16.5, 0.0f, 25.5); // 3
 	plataformas.Agregar(aux);
-	aux = new Pared(25, 8.5, 0.5f, 15.5);// 5
+	aux = new Pared(25, 8.5, 0.0f, 15.5);// 5
 	plataformas.Agregar(aux);
-	aux = new Pared(-80, -19.5, 0.5f, 32);// 1
+	aux = new Pared(-80, -19.5, 0.0f, 32);// 1
 	plataformas.Agregar(aux);
-	aux = new Pared(-70, 16, 0.5f, 33);// 2
+	aux = new Pared(-70, 16, 0.0f, 33);// 2
 	plataformas.Agregar(aux);
-	aux = new Pared(38, -18.5, 0.5f, 46); //6
+	aux = new Pared(38, -18.5, 0.0f, 46); //6
 	plataformas.Agregar(aux);
-	aux = new Pared(-14, 10, 0.5f, 15.5);// 4
+	aux = new Pared(-14, 10, 0.0f, 15.5);// 4
 	plataformas.Agregar(aux);
-	aux = new Pared(48, -5, 0.5f, 33);// 7
+	aux = new Pared(48, -5, 0.0f, 33);// 7
 	plataformas.Agregar(aux);
-	aux = new Pared(60, 19.5, 0.5f, 32);// 8 
+	aux = new Pared(60, 19.5, 0.0f, 32);// 8 
 	plataformas.Agregar(aux);
-	aux = new Pared(112, -12, 0.5f, 16);// 9 
+	aux = new Pared(112, -12, 0.0f, 16);// 9 
 	plataformas.Agregar(aux);
-	aux = new Pared(140, 10, 0.5f, 41);// 10 
+	aux = new Pared(140, 10, 0.0f, 41);// 10 
 	plataformas.Agregar(aux);
-	aux = new Pared(204, 10, 0.5f, 16);// 11
+	aux = new Pared(204, 10, 0.0f, 16);// 11
 	plataformas.Agregar(aux);
-	aux = new Pared(240, 10, 0.5f, 16);// 12
+	aux = new Pared(240, 10, 0.0f, 16);// 12
 	plataformas.Agregar(aux);
-	aux = new Pared(283, -3.5, 0.5f, 17);// 13
+	aux = new Pared(283, -3.5, 0.0f, 17);// 13
 	plataformas.Agregar(aux);
-	aux = new Pared(331, 9, 0.5f, 31.5); //14
+	aux = new Pared(331, 9, 0.0f, 31.5); //14
 	plataformas.Agregar(aux);
-	aux = new Pared(387, -10.5, 0.5f, 32);// 15
+	aux = new Pared(387, -10.5, 0.0f, 32);// 15
 	plataformas.Agregar(aux);
-	aux = new Pared(433.5, 11.5, 0.5f, 16);// 16
+	aux = new Pared(433.5, 11.5, 0.0f, 16);// 16
 	plataformas.Agregar(aux);
-	aux = new Pared(473.5, -20.5, 0.5f, 16);// 17
+	aux = new Pared(473.5, -20.5, 0.0f, 16);// 17
 	plataformas.Agregar(aux);
-	aux = new Pared(489.5, -12, 0.5f, 16);// 18
+	aux = new Pared(489.5, -12, 0.0f, 16);// 18
 	plataformas.Agregar(aux);
-	aux = new Pared(505.5, -4.25, 0.5f, 16);// 19
+	aux = new Pared(505.5, -4.25, 0.0f, 16);// 19
 	plataformas.Agregar(aux);
-	aux = new Pared(521.5, 4, 0.5f, 61);// 20
+	aux = new Pared(521.5, 4, 0.0f, 61);// 20
 	plataformas.Agregar(aux);
 }
 

@@ -1,5 +1,5 @@
-﻿  Mundo.cpp
-C:\Users\sanim\Source\Repos\PROYECTO-INFORMATICA-21\MetalSlug\src\Mundo.cpp(235,22): warning C4305: 'argumento': truncamiento de 'double' a 'float'
-C:\Users\sanim\Source\Repos\PROYECTO-INFORMATICA-21\MetalSlug\src\Mundo.cpp(236,20): warning C4305: 'argumento': truncamiento de 'double' a 'float'
-C:\Users\sanim\Source\Repos\PROYECTO-INFORMATICA-21\MetalSlug\src\Mundo.cpp(97): warning C4715: 'Mundo::CargarNivel': no todas las rutas de acceso de control devuelven un valor
+﻿  Niveles.cpp
+C:\Users\sanim\Source\Repos\PROYECTO-INFORMATICA-21\MetalSlug\src\Niveles.cpp(39,40): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\sanim\Source\Repos\PROYECTO-INFORMATICA-21\MetalSlug\src\Niveles.cpp(49,39): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\sanim\Source\Repos\PROYECTO-INFORMATICA-21\MetalSlug\src\Niveles.cpp(53,38): warning C4305: 'argumento': truncamiento de 'double' a 'float'
   Pang.vcxproj -> C:\Users\sanim\Source\Repos\PROYECTO-INFORMATICA-21\MetalSlug\bin\MetalSLug.exe
