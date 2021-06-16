@@ -25,25 +25,29 @@ Dragon::Dragon(float a, int atacar, float x, float y, float vx, float vy): Fly("
 void Dragon::Dibuja()
 {
 	glPushMatrix();
-	glTranslatef(posicion.x, posicion.y, 0);
+	glTranslatef(posicion.GetX(), posicion.GetY(), 0);
 	glColor3ub(rojo, verde, azul);
 
-	if (velocidad.x > 0.01)
+	if (velocidad.GetX() > 0.01)
 	{
 		Fly.flip(false, false);
+		Idle.flip(false,false);
+		Attack.flip(false, false);
 	}
-	else if (velocidad.x < -0.01)
+	else if (velocidad.GetX() < -0.01)
 	{
 		Fly.flip(true, false);
+		Idle.flip(true,false);
+		Attack.flip(true, false);
 	}
 
-	if (velocidad.x < 0.01 && velocidad.x > -0.01 && velocidad.y == 0 && atacar == 0)
+	if (velocidad.GetX() < 0.01 && velocidad.GetX() > -0.01 && velocidad.GetY() == 0 && atacar == 0)
 	{
 		Idle.setState(0);
 		Idle.draw();
 	}
 
-	if (velocidad.y == 0 && (velocidad.x > 0.1 || velocidad.x < -0.1) && atacar == 0)
+	if (velocidad.GetY() == 0 && (velocidad.GetX() > 0.1 || velocidad.GetX() < -0.1) && atacar == 0)
 	{
 		Fly.draw();
 		Attack.setState(0);
@@ -58,7 +62,7 @@ void Dragon::Dibuja()
 		}*/
 	}
 
-	glTranslatef(-posicion.x, -posicion.y, 0);
+	glTranslatef(-posicion.GetX(), -posicion.GetY(), 0);
 	glPopMatrix();
 }
 void Dragon::Mueve(float t)

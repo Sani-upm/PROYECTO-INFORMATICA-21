@@ -257,7 +257,7 @@ void Mundo::Mueve()
 			{
 				Fuego* aux = new Fuego();
 				aux->SetPos(dragones[i]->GetPosicion().x + 3.0f, dragones[i]->GetPosicion().y + 3);
-				Vector2D direccion_unitaria = jugador.GetPosicion().unitario();
+				Vector2D direccion_unitaria = (jugador.GetPosicion()-dragones[i]->GetPosicion()).unitario();
 				
 				aux->SetVel(30.0f *direccion_unitaria.x, 30.0f * direccion_unitaria.y);
 				//aux->SetVel(-60.0f, 0.0f);
