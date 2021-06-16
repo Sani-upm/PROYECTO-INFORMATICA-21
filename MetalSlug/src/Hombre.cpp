@@ -4,10 +4,10 @@
 
 Hombre::Hombre() :Walk("bin/Imagenes/walk.png",3,1,60), Idle("bin/Imagenes/parado.png",5,1,20), Jump("bin/Imagenes/jump2.png", 2,1,550), Dead("bin/Imagenes/dead.png",1,1,50)
 {
-	SetVida(1); //que el personaje tenga 5 vidas?
-	SetAltura(10); //no se que poner en altura
+	SetVida(1); //que el personaje tenga 1 vida
+	SetAltura(10); 
 
-	Walk.setCenter(5, 3); //hay que configurar todos los setCenter y setSize
+	Walk.setCenter(5, 3); 
 	Walk.setSize(8, altura);
 
 	Idle.setCenter(5, 3);
@@ -24,7 +24,7 @@ Hombre::Hombre() :Walk("bin/Imagenes/walk.png",3,1,60), Idle("bin/Imagenes/parad
 	aceleracion = 0;
 }
 
-Hombre::~Hombre() //pa que
+Hombre::~Hombre() 
 {
 }
 
