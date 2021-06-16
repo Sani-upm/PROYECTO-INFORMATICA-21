@@ -19,10 +19,6 @@ Hombre::Hombre() :Walk("bin/Imagenes/walk.png",3,1,60), Idle("bin/Imagenes/parad
 	Dead.setCenter(5, 1);
 	Dead.setSize(10, 7);
 
-
-	//rojo = 255;
-	//verde = 0;
-	//azul = 0;
 	posicion = 0;
 	velocidad = 0;
 	aceleracion = 0;
@@ -94,30 +90,6 @@ void Hombre::SetAltura(float _a)
 	altura = _a;
 }
 
-
-void Hombre::SetPosicion(double _x, double _y)
-{
-	posicion.SetCoordenadas(_x, _y);
-
-}
-
-void Hombre::SetPosicion(Vector2D _xy)
-{
-	posicion = _xy;
-}
-
-
-void Hombre::SetVelocidad(double _vx, double _vy)
-{
-	velocidad.SetCoordenadas(_vx, _vy);
-
-}
-void Hombre::SetAceleracion(double _ax, double _ay)
-{
-	aceleracion.SetCoordenadas(_ax, _ay);
-
-}
-
 void Hombre::SetVida(int _vida)
 {
 	vida = _vida;
@@ -128,36 +100,6 @@ void Hombre::SetVida(int _vida)
 float Hombre::GetAltura()
 {
 	return altura;
-}
-
-float Hombre::GetXPosicion()
-{
-	return posicion.x;
-}
-float Hombre::GetYPosicion()
-{
-	return posicion.y;
-}
-float Hombre::GetXVelocidad()
-{
-	return velocidad.x;
-}
-float Hombre::GetYVelocidad()
-{
-	return velocidad.y;
-}
-float Hombre::GetXAceleracion()
-{
-	return aceleracion.x;
-}
-float Hombre::GetYAceleracion()
-{
-	return aceleracion.y;
-}
-
-Vector2D Hombre::GetPosicion()
-{
-	return posicion;
 }
 
 int Hombre::GetVida()
@@ -173,5 +115,4 @@ void Hombre::SetSalto(int s)
 int Hombre::GetSalto()
 {
 	return Salto_cargado;
-
 }

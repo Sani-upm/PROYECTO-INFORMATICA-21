@@ -5,15 +5,15 @@
 
 Dragon::Dragon(float a, int atacar, float x, float y, float vx, float vy): Fly("bin/Imagenes/enemigofly.png", 2, 1, 50), Idle("bin/Imagenes/enemigoidle.png", 2, 1, 50), Attack("bin/Imagenes/enemigoattack.png", 5, 1, 50)
 {
-	SetAltura(a); //modificar
+	SetAltura(a);
 
-	Fly.setCenter(0, 0); //modoficar todos los setCenter y setSize
+	Fly.setCenter(a, (a/2)+3.5); 
 	Fly.setSize(a, altura);
 
-	Idle.setCenter(0, 0);
+	Idle.setCenter(a, (a / 2) + 3.5);
 	Idle.setSize(a, altura);
 
-	Attack.setCenter(0, 0);
+	Attack.setCenter(a, (a / 2) + 3);
 	Attack.setSize(a, altura);
 
 	posicion.x = x;
@@ -25,25 +25,28 @@ Dragon::Dragon(float a, int atacar, float x, float y, float vx, float vy): Fly("
 void Dragon::Dibuja()
 {
 	glPushMatrix();
-	glTranslatef(posicion.x, posicion.y, 0);
-	glColor3ub(rojo, verde, azul);
+	glTranslatef(posicion.GetX(), posicion.GetY(), 0);
 
-	if (velocidad.x > 0.01)
+	if (velocidad.GetX() > 0.01)
 	{
 		Fly.flip(false, false);
+		Idle.flip(false,false);
+		Attack.flip(false, false);
 	}
-	else if (velocidad.x < -0.01)
+	else if (velocidad.GetX() < -0.01)
 	{
 		Fly.flip(true, false);
+		Idle.flip(true,false);
+		Attack.flip(true, false);
 	}
 
-	if (velocidad.x < 0.01 && velocidad.x > -0.01 && velocidad.y == 0 && atacar == 0)
+	if (velocidad.GetX() < 0.01 && velocidad.GetX() > -0.01 && velocidad.GetY() == 0 && atacar == 0)
 	{
 		Idle.setState(0);
 		Idle.draw();
 	}
 
-	if (velocidad.y == 0 && (velocidad.x > 0.1 || velocidad.x < -0.1) && atacar == 0)
+	if (velocidad.GetY() == 0 && (velocidad.GetX() > 0.1 || velocidad.GetX() < -0.1) && atacar == 0)
 	{
 		Fly.draw();
 		Attack.setState(0);
@@ -52,13 +55,9 @@ void Dragon::Dibuja()
 	if (atacar == 1)
 	{
 		Attack.draw();
-		/*for (int i = 0; i < llamas.GetNumero(); i++)
-		{
-			llamas[i]->Dibuja();
-		}*/
 	}
 
-	glTranslatef(-posicion.x, -posicion.y, 0);
+	glTranslatef(-posicion.GetX(), -posicion.GetY(), 0);
 	glPopMatrix();
 }
 void Dragon::Mueve(float t)
@@ -70,86 +69,24 @@ void Dragon::Mueve(float t)
 	if (atacar == 0)
 	{
 		Fly.loop();
-		Idle.loop();
-		
 	}
 
 	if (atacar == 1)
 	{
 		Attack.loop();
-		/*for (int i = 0; i < llamas.GetNumero(); i++)
-			llamas[i]->Mueve(0.0025);*/
-
 	}
 
 }
-
-
-// Metodos Set
 
 void Dragon::SetAltura(double _a)
 {
 	altura = _a;
 }
 
-void Dragon::SetPosicion(double _x, double _y)
-{
-	posicion.SetCoordenadas(_x, _y);
-
-}
-
-void Dragon::SetPosicion(Vector2D _xy)
-{
-	posicion = _xy;
-}
-
-void Dragon::SetVelocidad(double _vx, double _vy)
-{
-	velocidad.SetCoordenadas(_vx, _vy);
-
-}
-void Dragon::SetAceleracion(double _ax, double _ay)
-{
-	aceleracion.SetCoordenadas(_ax, _ay);
-
-}
 
 void Dragon::SetAttack(int _ataque)
 {
 	atacar = _ataque;
-}
-
-// Metodos Get
-
-
-float Dragon::GetXPosicion()
-{
-	return posicion.x;
-}
-float Dragon::GetYPosicion()
-{
-	return posicion.y;
-}
-float Dragon::GetXVelocidad()
-{
-	return velocidad.x;
-}
-float Dragon::GetYVelocidad()
-{
-	return velocidad.y;
-}
-float Dragon::GetXAceleracion()
-{
-	return aceleracion.x;
-}
-float Dragon::GetYAceleracion()
-{
-	return aceleracion.y;
-}
-
-Vector2D Dragon::GetPosicion()
-{
-	return posicion;
 }
 
 int Dragon::getAtaque()

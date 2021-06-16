@@ -6,7 +6,6 @@
 #include "Dragon.h"
 #include "ListaDisparos.h"
 #include "Niveles.h"
-#include "Patata.h"
 #include "ListaDragon.h"
 #include "ListaFuego.h"
 
@@ -28,6 +27,7 @@ public:
 	void Tecla(unsigned char key);
 	void TeclaEspecial(unsigned char key);
 	void TeclaArriba(unsigned char _key);
+	int getDragones();
 
 	 //Metodos Set
 	void SetVidas(int);
@@ -48,7 +48,6 @@ public:
 	ListaDisparos disparos;
 	ListaFuego llamas;
 	Niveles niveles;
-	Patata patata;
 
 private:
 	double x_ojo;
